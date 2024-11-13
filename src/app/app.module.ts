@@ -10,6 +10,8 @@ import { ReservasComponent } from './reservas/reservas.component';
 import { AyudaComponent } from './ayuda/ayuda.component';
 import { UbicacionComponent } from './ubicacion/ubicacion.component';
 import { FormsModule } from '@angular/forms';
+import { PromocionesComponent } from './promociones/promociones.component';
+import { SesionComponent } from './sesion/sesion.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { FormsModule } from '@angular/forms';
     FlotaComponent,
     ReservasComponent,
     AyudaComponent,
-    UbicacionComponent
+    UbicacionComponent,
+    PromocionesComponent,
+    SesionComponent
   ],
   imports: [
     BrowserModule,

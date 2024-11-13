@@ -5,6 +5,7 @@ import { FlotaComponent } from './flota/flota.component';
 import { AyudaComponent } from './ayuda/ayuda.component';
 import { ReservasComponent } from './reservas/reservas.component';
 import { UbicacionComponent } from './ubicacion/ubicacion.component';
+import { PromocionesComponent } from './promociones/promociones.component';
 
 const routes: Routes = [
   {path: '',component: HomeComponent},
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path: 'ayuda', component: AyudaComponent},
   {path: 'reservas', component: ReservasComponent},
   {path: 'ubicacion', component: UbicacionComponent},
+  {path: 'promociones', component: PromocionesComponent},
   {path: '**', redirectTo: '', pathMatch: 'full'}
 ];
 

@@ -1,0 +1,25 @@
+<!-- Botón que abre el modal -->
+<button type="button" class="btn btn-primary" (click)="openLoginModal(loginModal)">Iniciar Sesión</button>
+
+<!-- Modal de inicio de sesión -->
+<ng-template #loginModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title text-white">Iniciar sesión</h4>
+  </div>
+  <div class="modal-body">
+    <form (submit)="onSubmit(); modal.close()">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Contraseña:</label>
+        <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password" required>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-primary" (click)="onSubmit()">Iniciar Sesión</button>
+    <button type="submit" class="btn btn-primary" (click)="onSubmit()">Registrarse</button>
+  </div>
+</ng-template>

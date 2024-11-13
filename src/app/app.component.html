@@ -1,58 +1,36 @@
 <header>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg navbar-custom">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a routerLink=''>
+    <img src="logo_matik_autorent.png" alt="home" class="logo-image">
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+          <a class="nav-link text-white" routerLink="flota">Flota</a>
+      </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link text-white" routerLink="promociones">Promociones</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
+          <a class="nav-link text-white" routerLink="reservas">Reservas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          <a class="nav-link text-white" routerLink="ayuda">Ayuda</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
+
+      <!-- codigo para colocar form de busqueda -->
+
+      <!--<form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      </form>-->
      
-      
-      <!-- Botón que activa el popover -->
-<button type="button" [ngbPopover]="loginForm" popoverTitle="Iniciar sesión" placement="bottom">
-  Iniciar Sesión
-</button>
-
-<!-- Template del popover -->
-<ng-template #loginForm>
-  <form (submit)="onSubmit()">
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email" required>
-    </div>
-    <div class="form-group">
-      <label for="password">Contraseña:</label>
-      <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password" required>
-    </div>
-    <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
-  </form>
-</ng-template>
+      <app-sesion></app-sesion>
 
 
     </div>
@@ -60,10 +38,44 @@
 </nav>
 </header>
 
-<app-home></app-home>
+<router-outlet></router-outlet>
 
-<footer>
+<footer class="bg-dark text-white py-4">
+  <div class="container">
+    <div class="row">
+      <!-- Sección de enlaces -->
+      <div class="col-md-4">
+        <h5>Enlaces</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white">Flota</a></li>
+          <li><a href="#" class="text-white">Promociones</a></li>
+          <li><a href="#" class="text-white">Reservas</a></li>
+          <li><a href="#" class="text-white">Ayuda</a></li>
+        </ul>
+      </div>
+      
+      <!-- Sección de contacto -->
+      <div class="col-md-4">
+        <h5>Contacto</h5>
+        <ul class="list-unstyled">
+          <li><a href="mailto:info@matikautorent.com" class="text-white">info&#64;matikautorent.com</a></li>
+          <li><a href="tel:+1234567890" class="text-white">+1 234 567 890</a></li>
+        </ul>
+      </div>
 
+      <!-- Sección de redes sociales -->
+      <div class="col-md-4">
+        <h5>Redes Sociales</h5>
+        <ul class="list-unstyled">
+          <li><a href="https://facebook.com" class="text-white" target="_blank">Facebook</a></li>
+          <li><a href="https://twitter.com" class="text-white" target="_blank">Twitter</a></li>
+          <li><a href="https://instagram.com" class="text-white" target="_blank">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
 
-
+    <div class="text-center mt-3">
+      <p>&copy; 2024 Matik AutoRent. Todos los derechos reservados.</p>
+    </div>
+  </div>
 </footer>
