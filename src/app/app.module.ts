@@ -12,6 +12,7 @@ import { UbicacionComponent } from './ubicacion/ubicacion.component';
 import { FormsModule } from '@angular/forms';
 import { PromocionesComponent } from './promociones/promociones.component';
 import { SesionComponent } from './sesion/sesion.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SesionComponent } from './sesion/sesion.component';
     AyudaComponent,
     UbicacionComponent,
     PromocionesComponent,
-    SesionComponent
+    SesionComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

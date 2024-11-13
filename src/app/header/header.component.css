@@ -1,0 +1,27 @@
+.logo-image {
+    width: 70px; /* Ajusta el tamaño según tus necesidades */
+    height: auto;
+    cursor: pointer; /* Hace que el cursor cambie al puntero al pasar sobre la imagen */
+    border-radius: 50%;
+  }
+
+  .navbar-custom {
+    background-color: #8B0000; /* Color rojo oscuro */
+    padding: 5px 30px;
+  }
+
+  .navbar-nav .nav-item { /*espaciado entre items*/
+        margin: 10px; 
+      }
+
+      .navbar-nav .nav-link {
+        transition: background-color 0.3s, color 0.3s;
+        padding: 5px 20px; 
+        border-radius: 50px;
+      }
+
+      .navbar-nav .nav-link:hover {
+        background-color: #f0f0f0;
+        color: black !important;  
+        
+      }
