@@ -1,5 +1,6 @@
+
 <!-- Botón que abre el modal -->
-<button type="button" class="btn btn-primary" (click)="openLoginModal(loginModal)">Iniciar Sesión</button>
+<button type="button" class="btn text-white" (click)="openLoginModal(loginModal)">Iniciar Sesión</button>
 
 <!-- Modal de inicio de sesión -->
 <ng-template #loginModal let-modal>
@@ -19,7 +20,7 @@
     </form>
   </div>
   <div class="modal-footer">
-    <button type="submit" class="btn btn-primary" (click)="onSubmit()">Iniciar Sesión</button>
-    <button type="submit" class="btn btn-primary" (click)="onSubmit()">Registrarse</button>
+    <button type="submit" class="btn text-white" (click)="onSubmit()">Iniciar Sesión</button>
+    <button type="submit" class="btn text-white" (click)="onSubmit()">Registrarse</button>
   </div>
 </ng-template>

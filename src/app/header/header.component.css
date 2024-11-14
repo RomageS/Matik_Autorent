@@ -1,3 +1,8 @@
+.nav-change:hover {
+    color: black; 
+    background-color: #f0f0f0;
+  }
+
 .logo-image {
     width: 70px; /* Ajusta el tamaño según tus necesidades */
     height: auto;
@@ -8,7 +13,19 @@
   .navbar-custom {
     background-color: #8B0000; /* Color rojo oscuro */
     padding: 5px 30px;
+    position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: top 0.3s;  /* Opcional: agrega transición suave */
   }
+
+ .nav-change {
+    transition: background-color 0.3s, color 0.3s;
+    padding: 5px 20px; 
+    border-radius: 50px;
+  }
+
+
 
   .navbar-nav .nav-item { /*espaciado entre items*/
         margin: 10px; 
@@ -24,4 +41,8 @@
         background-color: #f0f0f0;
         color: black !important;  
         
+      }
+
+      .navbar-toggler {
+        background-color: #f0f0f0;
       }
