@@ -1,0 +1,21 @@
+.help-section {
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .bg-info {
+    background-color: #a0e7e5;
+  }
+  
+  .bg-pink {
+    background-color: #ffb3c1;
+  }
+  
+  .bg-success {
+    background-color: #b9fbc0;
+  }
+  
+  .bg-primary {
+    background-color: #a0c4ff;
+  }
