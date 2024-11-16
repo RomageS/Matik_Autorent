@@ -1,21 +1,100 @@
+/* Estilo general */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8; /* Fondo gris claro */
+  color: #333;
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Sección de ayuda */
 .help-section {
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
+  border-radius: 15px; /* Bordes redondeados */
+  margin: 20px auto;
+  transition: transform 0.3s, box-shadow 0.3s; /* Animación al interactuar */
+  animation: fadeIn 1.5s ease; /* Animación al cargar */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos */
+.help-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  color: white;
+}
+
+/* Párrafos */
+.help-section p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #f5f5f5;
+}
+
+/* Listas */
+.help-section ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.help-section ul li {
+  font-size: 1rem;
+  margin: 10px 0;
+  color: #fff;
+}
+
+/* Colores personalizados */
+.bg-info {
+  background-color: #cc0000; /* Rojo oscuro */
+}
+
+.bg-pink {
+  background-color: #660000; /* Rojo vino */
+}
+
+.bg-success {
+  background-color: #b30000; /* Rojo brillante */
+}
+
+.bg-primary {
+  background-color: #404040; /* Gris oscuro */
+}
+
+/* Efectos hover */
+.help-section:hover {
+  transform: translateY(-10px); /* Efecto de elevación */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+}
+
+/* Animación de fade-in */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
   }
-  
-  .bg-info {
-    background-color: #a0e7e5;
+  to {
+      opacity: 1;
+      transform: translateY(0);
   }
-  
-  .bg-pink {
-    background-color: #ffb3c1;
+}
+
+/* Adaptabilidad */
+@media (max-width: 768px) {
+  .help-section h3 {
+      font-size: 1.5rem;
   }
-  
-  .bg-success {
-    background-color: #b9fbc0;
+  .help-section p {
+      font-size: 1rem;
   }
-  
-  .bg-primary {
-    background-color: #a0c4ff;
+  .help-section ul li {
+      font-size: 0.9rem;
   }
+}
