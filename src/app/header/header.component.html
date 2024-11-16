@@ -33,10 +33,24 @@
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>-->
 
+         <!-- Botones de Registro y Sesión -->
+        <div *ngIf="!isLoggedIn; else loggedInTemplate">
         <button type="button" class="btn text-white"><a class="text-white" routerLink="registro">Registrarse</a></button>
         <app-sesion></app-sesion>
-  
-  
+          </div>
+
+          <!-- Imagen cuando está autenticado -->
+          <ng-template #loggedInTemplate>
+            <div class="d-flex align-items-center">
+              <img
+                src="ruta_a_tu_avatar.jpg"
+                alt="Usuario"
+                class="rounded-circle"
+                style="width: 40px; height: 40px; object-fit: cover;"
+              />
+              <button class="btn text-white ms-2" (click)="logout()">Cerrar sesión</button>
+            </div>
+          </ng-template>
       </div>
     </div>
   </nav>
