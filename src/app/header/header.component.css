@@ -25,7 +25,17 @@
     border-radius: 50px;
   }
 
+  button a {
+    border-radius: 50px;
+    transition: background-color 0.3s, color 0.3s;
+    padding: 5px 20px; 
+    text-decoration-line: none;
+}
 
+button:hover a {
+    background-color: #f0f0f0;
+    color: black !important; 
+}
 
   .navbar-nav .nav-item { /*espaciado entre items*/
         margin: 10px; 
@@ -46,3 +56,4 @@
       .navbar-toggler {
         background-color: #f0f0f0;
       }
+

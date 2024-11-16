@@ -21,3 +21,15 @@ button:hover {
 .modal-footer {
     background-color: #8B0000;
 }
+
+button a {
+    border-radius: 50px;
+    transition: background-color 0.3s, color 0.3s;
+    padding: 5px 20px; 
+    border-radius: 50px;
+    text-decoration-line: none;
+}
+
+button:hover a {
+    color: black !important; 
+}
