@@ -9,6 +9,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class SesionComponent {
   email: string = '';
   password: string = '';
+  router: any;
 
   constructor(private modalService: NgbModal) {}
 
@@ -20,5 +21,10 @@ export class SesionComponent {
     console.log('Email:', this.email);
     console.log('Password:', this.password);
     // Lógica adicional para autenticar al usuario
+  }
+  
+  redirectToRegister(modal: any) {
+    modal.close();
+    this.router.navigate(['/src/app/registro/registro.component.html']); // Redirige a la página de registro
   }
 }
