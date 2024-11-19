@@ -1,78 +1,141 @@
-/* Estilo general */
+/* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #fef2f2; 
+    color: #440000;
+    line-height: 1.6;
 }
 
 header {
-    background-color: #ef4444;
-    padding: 15px;
+    border: 5px solid white;
+    border-radius: 15px; 
+    margin: 10px; 
+    background-color: #8B0000;
     color: white;
+    padding: 30px 20px;
     text-align: center;
+    position: relative;
 }
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
+header .header-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    animation: fadeIn 2s ease-in-out;
 }
 
-nav ul li {
-    display: inline;
-    margin-right: 20px;
+header .header-container p {
+    font-size: 1.2rem;
+    margin: 0;
+    animation: fadeIn 3s ease-in-out;
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Estilo del contenido principal */
 main {
     padding: 20px;
 }
 
-h1, h2 {
-    color: #dc2626;
+.promotions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
 }
 
-ol, ul {
-    margin-left: 20px;
-}
-
-footer {
-    background-color: #333;
-    color: white;
+/* Estilo para las tarjetas de promociones */
+.promotion-card {
+    background-color: #fff5f5;
+    border: 2px solid #8B0000;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Estilos responsivos */
-@media (max-width: 768px) {
-    header {
-        padding: 10px;
-    }
+.promotion-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #b30000;
+}
 
-    nav ul {
-        text-align: center;
-    }
+.promotion-card p {
+    font-size: 1rem;
+    color: #660000;
+    margin-bottom: 20px;
+}
 
-    nav ul li {
-        display: block;
-        margin-bottom: 10px;
-    }
+.promotion-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #ffeaea;
+}
 
-    main {
-        padding: 10px;
+.cta-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #cc0000;
+    transform: translateY(-5px);
+}
+
+/* Sección de promoción limitada */
+.limited-time {
+    background-color: #ffcccc;
+    border: 2px dashed #ff4d4d;
+    padding: 30px 20px;
+    text-align: center;
+    animation: slideIn 1s ease-in-out;
+    margin-bottom: 40px;
+}
+
+.limited-time h2 {
+    font-size: 2rem;
+    color: #b30000;
+}
+
+.limited-time p {
+    font-size: 1.2rem;
+    color: #660000;
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #440000;
+    color: white;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
     }
 }
