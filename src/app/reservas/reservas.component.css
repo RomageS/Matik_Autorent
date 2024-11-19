@@ -1,0 +1,23 @@
+.card {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .btn-warning {
+    background-color: #ffcc00;
+    border: none;
+  }
+  
+  .btn-warning:hover {
+    background-color: #f1b800;
+  }
+  
+  .form-control,
+  .form-select {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .text-warning:hover {
+    text-decoration: underline;
+  }
+  
