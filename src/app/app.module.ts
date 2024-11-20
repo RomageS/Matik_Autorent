@@ -10,10 +10,11 @@ import { ReservasComponent } from './reservas/reservas.component';
 import { AyudaComponent } from './ayuda/ayuda.component';
 import { UbicacionComponent } from './ubicacion/ubicacion.component';
 import { FormsModule } from '@angular/forms';
-import { PromocionesComponent } from './promociones/promociones.component';
 import { SesionComponent } from './sesion/sesion.component';
 import { HeaderComponent } from './header/header.component';
 import { RegistroComponent } from './registro/registro.component';
+import { TerminosComponent } from './terminos/terminos.component';
+import { PrivacidadComponent } from './privacidad/privacidad.component';
 
 @NgModule({
   declarations: [
@@ -23,10 +24,11 @@ import { RegistroComponent } from './registro/registro.component';
     ReservasComponent,
     AyudaComponent,
     UbicacionComponent,
-    PromocionesComponent,
     SesionComponent,
     HeaderComponent,
-    RegistroComponent
+    RegistroComponent,
+    TerminosComponent,
+    PrivacidadComponent
   ],
   imports: [
     BrowserModule,

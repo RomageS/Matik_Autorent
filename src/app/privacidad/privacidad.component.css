@@ -1,0 +1,7 @@
+.hero {
+    background-image: url('/Promociones/promocion_1.jpg'); /* Cambia 'imagen.jpg' por la ruta de tu imagen */
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Altura de la sección */
+  }
+  
