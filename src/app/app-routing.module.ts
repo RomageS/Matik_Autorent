@@ -5,9 +5,10 @@ import { FlotaComponent } from './flota/flota.component';
 import { AyudaComponent } from './ayuda/ayuda.component';
 import { ReservasComponent } from './reservas/reservas.component';
 import { UbicacionComponent } from './ubicacion/ubicacion.component';
-import { PromocionesComponent } from './promociones/promociones.component';
 import { SesionComponent } from './sesion/sesion.component';
 import { RegistroComponent } from './registro/registro.component';
+import { PrivacidadComponent } from './privacidad/privacidad.component';
+import { TerminosComponent } from './terminos/terminos.component';
 
 const routes: Routes = [
   {path: '',component: HomeComponent},
@@ -15,8 +16,11 @@ const routes: Routes = [
   {path: 'ayuda', component: AyudaComponent},
   {path: 'reservas', component: ReservasComponent},
   {path: 'ubicacion', component: UbicacionComponent},
-  {path: 'promociones', component: PromocionesComponent},
   {path: 'registro', component: RegistroComponent},
+  {path: 'privacidad', component: PrivacidadComponent},
+  {path: 'registro/privacidad', component: PrivacidadComponent},
+  {path: 'terminos', component:TerminosComponent},
+  {path: 'registro/terminos', component:TerminosComponent},
   {path: '**', redirectTo: '', pathMatch: 'full'},
   
 ];
