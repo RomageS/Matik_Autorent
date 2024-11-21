@@ -9,14 +9,14 @@
 <footer class="bg-dark text-white py-4">
   <div class="container">
     <div class="row">
+      
       <!-- Sección de enlaces -->
       <div class="col-md-4">
         <h5>Enlaces</h5>
         <ul class="list-unstyled">
-          <li><a href="#" class="text-white">Flota</a></li>
-          <li><a href="#" class="text-white">Promociones</a></li>
-          <li><a href="#" class="text-white">Reservas</a></li>
-          <li><a href="#" class="text-white">Ayuda</a></li>
+          <li><a routerLink="flota" class="text-white">Flota</a></li>
+          <li><a routerLink="reservas" class="text-white">Reservas</a></li>
+          <li><a routerLink="ayuda" class="text-white">Ayuda</a></li>
         </ul>
       </div>
       
@@ -40,8 +40,10 @@
       </div>
     </div>
 
-    <div class="text-center mt-3">
+    <div class="text-center mt-3 d-flex justify-content-center align-items-center gap-3">
       <p>&copy; 2024 Matik AutoRent. Todos los derechos reservados.</p>
+      <a routerLink="terminos">Términos y Condiciones</a>
+      <a routerLink="privacidad">Aviso de Privacidad</a>
     </div>
   </div>
 </footer>
