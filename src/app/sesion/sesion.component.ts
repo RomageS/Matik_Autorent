@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sesion',
@@ -10,6 +11,11 @@ export class SesionComponent {
   email: string = '';
   password: string = '';
   router: any;
+
+  private ValidCredentials = {
+    email : "admin",
+    contraseña: "1234"
+  }
 
   constructor(private modalService: NgbModal) {}
 
