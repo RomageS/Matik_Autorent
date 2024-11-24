@@ -2,12 +2,13 @@
     <div class="row">
       <div class="col-md-4" *ngFor="let car of cars">
         <div class="card shadow-sm">
-          <img [src]="car.image" class="img-thumbnail" alt="{{ car.model }}">
+          <img [src]="car.image" class="img-thumbnail" alt="{{ car.image }}">
           <div class="card-body">
             <h5 class="card-title">{{ car.model }}</h5>
             <p class="card-text text-muted">{{ car.category }}</p>
             <ul class="list-unstyled mb-3">
-              <li><strong>Pasajeros:</strong> {{ car.passengers }}</li>
+              <li><strong>Marca:</strong> {{ car.brand }}</li>
+              <li><strong>Pasajeros:</strong> {{ car.color }}</li>
               <li><strong>Equipaje:</strong> {{ car.luggage }}</li>
               <li><strong>Transmisión:</strong> {{ car.transmission }}</li>
               <li><strong>Puertas:</strong> {{ car.doors }}</li>
