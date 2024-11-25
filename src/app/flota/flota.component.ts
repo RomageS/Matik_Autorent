@@ -14,7 +14,11 @@ ngOnInit():void {
 this.service.obtenerDatos().subscribe((data) => {
 this.cars = data;
 
+
+//Para hacer prueba
 //alert(this.cars[1].brand);
+
+
 });
 
 }
