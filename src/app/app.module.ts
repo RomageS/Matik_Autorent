@@ -1,6 +1,8 @@
 import { NgbModalModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { provideHttpClient } from '@angular/common/http';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +17,7 @@ import { HeaderComponent } from './header/header.component';
 import { RegistroComponent } from './registro/registro.component';
 import { TerminosComponent } from './terminos/terminos.component';
 import { PrivacidadComponent } from './privacidad/privacidad.component';
+import { ApiService } from './servicios/api.service';
 
 @NgModule({
   declarations: [
@@ -28,16 +31,21 @@ import { PrivacidadComponent } from './privacidad/privacidad.component';
     HeaderComponent,
     RegistroComponent,
     TerminosComponent,
-    PrivacidadComponent
+    PrivacidadComponent,
+
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    NgbModalModule
+    NgbModalModule,
   ],
-  providers: [],
+
+  providers: [
+    provideHttpClient()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

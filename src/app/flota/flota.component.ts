@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../servicios/api.service';
 
 @Component({
   selector: 'app-flota',
@@ -6,34 +7,32 @@ import { Component } from '@angular/core';
   styleUrl: './flota.component.css'
 })
 export class FlotaComponent {
+ constructor(private service: ApiService) {
+  
+ }
+ngOnInit():void {
+this.service.obtenerDatos().subscribe((data) => {
+this.cars = data;
+
+
+//Para hacer prueba
+//alert(this.cars[1].brand);
+
+
+});
+
+}
+
   cars = [
     {
+      color: '',
+      brand:'',
       model: 'Chevrolet Beat 5P',
       category: 'Economy Car',
       passengers: 5,
       luggage: '2 Maletas',
       transmission: 'Estándar',
       doors: 5,
-      ac: true,
-      image: 'https://via.placeholder.com/300x200'
-    },
-    {
-      model: 'Chevrolet Beat 4P',
-      category: 'Compact Car',
-      passengers: 5,
-      luggage: '2 Maletas',
-      transmission: 'Estándar',
-      doors: 4,
-      ac: true,
-      image: 'https://via.placeholder.com/300x200'
-    },
-    {
-      model: 'Chevrolet Aveo LT',
-      category: 'Intermediate Car',
-      passengers: 5,
-      luggage: '3 Maletas',
-      transmission: 'Automático',
-      doors: 4,
       ac: true,
       image: 'https://via.placeholder.com/300x200'
     }
