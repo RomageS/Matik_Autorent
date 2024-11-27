@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
+import { ApiService } from '../servicios/api.service';
 
 @Component({
   selector: 'app-sesion',
@@ -10,23 +11,33 @@ import { Router } from '@angular/router';
 export class SesionComponent {
   email: string = '';
   password: string = '';
-  router: any;
 
   private ValidCredentials = {
     email : "admin",
     contraseña: "1234"
   }
 
-  constructor(private modalService: NgbModal) {}
+  constructor(
+    private modalService: NgbModal,
+    private apiService: ApiService,
+    private router: Router
+  ) {}
 
   openLoginModal(content: any) {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' });
   }
 
   onSubmit() {
-    console.log('Email:', this.email);
-    console.log('Password:', this.password);
-    // Lógica adicional para autenticar al usuario
+    this.apiService.login(this.email, this.password).subscribe({
+      next: (response) => {
+        console.log('Inicio de sesión exitoso:', response);
+        this.router.navigate(['/dashboard']); // Redirige al dashboard
+      },
+      error: (err) => {
+        console.error('Error en el inicio de sesión:', err);
+        alert('Credenciales incorrectas');
+      }
+    });
   }
   
   redirectToRegister(modal: any) {
