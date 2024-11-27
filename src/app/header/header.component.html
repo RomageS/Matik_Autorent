@@ -30,6 +30,13 @@
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>-->
 
+        <div *ngIf="!isLoggedIn; else loggedInTemplate">
+          <button type="button" class="btn text-white"><a class="text-white" routerLink="dashboard">historial de Usuario</a></button>
+          <app-dashboard></app-dashboard>
+            </div>
+
+
+
          <!-- Botones de Registro y Sesión -->
         <div *ngIf="!isLoggedIn; else loggedInTemplate">
         <button type="button" class="btn text-white"><a class="text-white" routerLink="registro">Registrarse</a></button>
