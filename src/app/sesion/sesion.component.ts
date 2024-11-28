@@ -15,7 +15,7 @@ export class SesionComponent {
 
   logout() {
     localStorage.removeItem('isLoggedIn'); // Limpia el estado de sesión
-    this.router.navigate(['/']); // Redirige al inicio o página principal
+    this.router.navigate(['']); // Redirige al inicio o página principal
     console.log('Sesión cerrada');
   }
 
@@ -68,6 +68,6 @@ export class SesionComponent {
 
   redirectToRegister(modal: any) {
     modal.close();
-    this.router.navigate(['/src/app/registro/registro.component.html']); // Redirige a la página de registro
+    this.router.navigate(['registro']); // Redirige a la página de registro
   }
 }
