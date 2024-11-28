@@ -1,1 +1,54 @@
-<p>dashboard works!</p>
+    <!-- Autos disponibles -->
+    <section>
+      <h3>Autos Disponibles</h3>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Modelo</th>
+              <th>Marca</th>
+              <th>Precio por Día</th>
+              <th>Disponibilidad</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let car of availableCars">
+              <td>{{ car.model }}</td>
+              <td>{{ car.brand }}</td>
+              
+              <td>
+                <span class="badge bg-success" *ngIf="car.available">Disponible</span>
+                <span class="badge bg-danger" *ngIf="!car.available">No Disponible</span>
+              </td>
+              
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  
+    <!-- Historial de Reservas -->
+    <section class="mt-4">
+      <h3>Historial de Reservas</h3>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Auto</th>
+              <th>Fecha de Inicio</th>
+              <th>Fecha de Fin</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let reservation of userReservations">
+              <td>{{ reservation.car.model }} - {{ reservation.car.brand }}</td>
+              <td>{{ reservation.startDate }}</td>
+              <td>{{ reservation.endDate }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  

@@ -1,6 +1,13 @@
 
 <!-- Botón que abre el modal -->
-<button type="button" class="btn text-white" (click)="openLoginModal(loginModal)">Iniciar Sesión</button>
+<div>
+  <!-- Si no está autenticado, muestra el botón para abrir el modal -->
+  <button type="button" class="btn text-white" *ngIf="!isLoggedIn()" (click)="openLoginModal(loginModal)">Iniciar Sesión</button>
+
+  <!-- Si está autenticado, muestra el botón para cerrar sesión -->
+  <button type="button" class="btn text-white" *ngIf="isLoggedIn()" (click)="logout()">Cerrar Sesión</button>
+</div>
+
 
 <!-- Modal de inicio de sesión -->
 <ng-template #loginModal let-modal>
@@ -8,7 +15,7 @@
     <h4 class="modal-title text-white">Iniciar sesión</h4>
   </div>
   <div class="modal-body">
-    <form (submit)="onSubmit(); modal.close()">
+    <form (submit)="onSubmit()">
       <div class="form-group">
         <label for="email">Email:</label>
         <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email" required>
@@ -20,7 +27,11 @@
     </form>
   </div>
   <div class="modal-footer">
-    <button type="submit" class="btn text-white" (click)="onSubmit()">Iniciar Sesión</button>
-    <button type="button" class="btn text-white" (click)="redirectToRegister(modal)"><a class="text-white" routerLink="registro">Registrarse</a></button>
+    <button 
+  [disabled]="isLoggedIn()" 
+  (click)="onSubmit()">
+  Iniciar Sesión
+</button>
+    <button type="button" class="btn text-white"><a class="text-white" routerLink="registro">Registrarse</a></button>
   </div>
 </ng-template>

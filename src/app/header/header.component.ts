@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,8 +8,20 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   isLoggedIn: boolean = false; // Variable para verificar si el usuario está autenticado.
+  @ViewChild('navbarCollapse') navbarCollapse!: ElementRef; // Referencia al navbar
 
-  constructor() {}
+  constructor(private router: Router) {
+    this.router.events.subscribe(() => {
+      this.closeNavbar();
+    });
+  }
+
+  // Método para cerrar el navbar
+  closeNavbar() {
+    if (this.navbarCollapse.nativeElement.classList.contains('show')) {
+      this.navbarCollapse.nativeElement.classList.remove('show');
+    }
+  }
 
   // Simula el inicio y cierre de sesión para pruebas.
   login() {
