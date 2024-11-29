@@ -1,64 +1,43 @@
 <div class="container py-4">
-    <div class="card p-4" style="background-color: #005bac; color: white; border-radius: 10px;">
-      <div class="row">
-        <div class="col-12">
-          <h2 class="text-white">Realizar una reserva</h2>
-          <p class="text-white-50">*Indica campo requerido</p>
-          <a href="#" class="text-warning float-end" style="font-size: 14px;">Ver/Cancelar reservación</a>
-        </div>
+  <div class="card p-4" style="background-color: #005bac; color: white; border-radius: 10px;">
+    <h2 class="text-white text-center mb-4">Realizar una Reserva</h2>
+    <form (ngSubmit)="realizarReserva()">
+      <div class="mb-3">
+        <label class="form-label">Fecha de Entrega*</label>
+        <input
+          type="date"
+          class="form-control"
+          [(ngModel)]="reserva.fechaEntrega"
+          name="fechaEntrega"
+          [min]="minDate"
+          required
+        />
       </div>
-      <div class="row mt-3">
-        <div class="col-md-6 mb-3">
-          <label class="form-label">Fecha de entrega*</label>
-          <input type="date" class="form-control">
-        </div>
-        <div class="col-md-6 mb-3">
-          <label class="form-label">Hora*</label>
-          <select class="form-select">
-            <option selected disabled>Selecciona una hora</option>
-            <option>08:00 AM</option>
-            <option>12:00 PM</option>
-            <option>06:00 PM</option>
-          </select>
-        </div>
-        <div class="col-md-6 mb-3">
-          <label class="form-label">Fecha de regreso*</label>
-          <input type="date" class="form-control">
-        </div>
-        <div class="col-md-6 mb-3">
-          <label class="form-label">Hora*</label>
-          <select class="form-select">
-            <option selected disabled>Selecciona una hora</option>
-            <option>08:00 AM</option>
-            <option>12:00 PM</option>
-            <option>06:00 PM</option>
-          </select>
-        </div>
-        <div class="col-md-6 mb-3">
-          <label class="form-label">Código de descuento</label>
-          <input type="text" class="form-control" placeholder="Ingresa tu código">
-        </div>
-        <div class="col-md-6 mb-3">
-          <label class="form-label">Edad*</label>
-          <select class="form-select">
-            <option>18+</option>
-            <option>25+</option>
-            <option>35+</option>
-          </select>
-        </div>
+      <div class="mb-3">
+        <label class="form-label">Fecha de Regreso*</label>
+        <input
+          type="date"
+          class="form-control"
+          [(ngModel)]="reserva.fechaRegreso"
+          name="fechaRegreso"
+          [min]="reserva.fechaEntrega || minDate"
+          required
+        />
       </div>
-      <div class="row">
-        <div class="col-md-12">
-          <button class="btn btn-warning text-dark w-100">Buscar</button>
-        </div>
+      <div class="mb-3">
+        <label class="form-label">Código de Descuento</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="reserva.codigoDescuento"
+          name="codigoDescuento"
+          placeholder="Opcional"
+        />
       </div>
-      <div class="row mt-3">
-        <div class="col-md-12 text-center">
-          <p class="text-white">
-            Consulta nuestras opciones de <a href="#" class="text-warning text-decoration-none">empresas</a>
-          </p>
-        </div>
-      </div>
+      <button type="submit" class="btn btn-warning text-dark w-100">Confirmar Reserva</button>
+    </form>
+    <div class="text-center mt-3">
+      <a href="#" class="text-warning text-decoration-none">Ver o Cancelar Reservación</a>
     </div>
   </div>
-  
+</div>

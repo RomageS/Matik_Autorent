@@ -33,3 +33,14 @@ button a {
 button:hover a {
     color: black !important; 
 }
+
+.btn-sm {
+    font-size: 12px;
+    transition: background-color 0.3s, color 0.3s;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+
+  .btn-sm:hover {
+    color: black !important;
+  }

@@ -10,6 +10,7 @@ import { RegistroComponent } from './registro/registro.component';
 import { PrivacidadComponent } from './privacidad/privacidad.component';
 import { TerminosComponent } from './terminos/terminos.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 const routes: Routes = [
   {path: '',component: HomeComponent},
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path: 'terminos', component:TerminosComponent},
   {path: 'registro/terminos', component:TerminosComponent},
   {path: 'dashboard', component:DashboardComponent},
+  {path: 'perfil', component:PerfilComponent},
   {path: '**', redirectTo: '', pathMatch: 'full'},
   
 ];

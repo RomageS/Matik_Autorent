@@ -35,5 +35,12 @@ export class ApiService {
     return this.http.post(`${this.apiUrl}/vehicles`, payload);
   }
 
+  getFeaturedVehicles(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/vehicles/featured`);
+  }
+
+  registrarReserva(reserva: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/dates`, reserva);
+  }
 
 }
