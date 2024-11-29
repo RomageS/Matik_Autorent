@@ -30,12 +30,16 @@
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>-->
 
-        <div *ngIf="!isLoggedIn; else loggedInTemplate">
-          <button type="button" class="btn text-white"><a class="text-white" routerLink="dashboard">historial de Usuario</a></button>
-          <app-dashboard></app-dashboard>
-            </div>
+        <!-- Botón para acceder al Dashboard si el usuario está logueado -->
+<div *ngIf="isLoggedIn">
+  <button type="button" class="btn btn-primary">
+    <a class="text-white" routerLink="/dashboard">historial de cliente</a>
+  </button>
+</div>
 
 
+
+      
 
          <!-- Botones de Registro y Sesión -->
         <div *ngIf="!isLoggedIn; else loggedInTemplate">

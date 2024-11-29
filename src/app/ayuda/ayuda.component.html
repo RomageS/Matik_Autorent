@@ -1,45 +1,98 @@
-<!-- Sección de Dudas sobre reserva -->
 <div class="container my-5">
-    <div class="help-section bg-info text-center text-white py-5 mb-3">
-      <h3>Dudas sobre reserva</h3>
-      <p>¿Tienes preguntas sobre cómo reservar un vehículo? Aquí encontrarás las respuestas a las dudas más comunes sobre el proceso de reserva.</p>
-      <ul>
-        <li>¿Cómo reservo un vehículo?</li>
-        <li>¿Puedo modificar mi reserva?</li>
-        <li>¿Cuáles son los métodos de pago aceptados?</li>
-      </ul>
-    </div>
-  
-    <!-- Sección de Preguntas frecuentes -->
-    <div class="help-section bg-pink text-center text-white py-5 mb-3">
-      <h3>Preguntas frecuentes</h3>
-      <p>Encuentra respuestas a preguntas comunes sobre nuestros servicios y políticas.</p>
-      <ul>
-        <li>¿Cuál es el costo de la renta?</li>
-        <li>¿Qué incluye la renta del vehículo?</li>
-        <li>¿Qué debo hacer en caso de accidente?</li>
-      </ul>
-    </div>
-  
-    <!-- Sección de Aclaraciones y devoluciones -->
-    <div class="help-section bg-success text-center text-white py-5 mb-3">
-      <h3>Aclaraciones y devoluciones</h3>
-      <p>Si necesitas hacer una aclaración o solicitar una devolución, revisa las opciones disponibles.</p>
-      <ul>
-        <li>¿Cuál es la política de cancelación y reembolso?</li>
-        <li>¿Cómo solicito una devolución?</li>
-        <li>¿Qué sucede si no estoy satisfecho con el servicio?</li>
-      </ul>
-    </div>
-  
-    <!-- Sección de Seguimiento de solicitud -->
-    <div class="help-section bg-primary text-center text-white py-5">
-      <h3>Seguimiento de solicitud</h3>
-      <p>Revisa el estado de tu solicitud y recibe actualizaciones en tiempo real.</p>
-      <ul>
-        <li>¿Cómo puedo verificar el estado de mi solicitud?</li>
-        <li>¿Cuánto tiempo tarda el proceso de aprobación?</li>
-        <li>¿Cómo recibo actualizaciones sobre mi solicitud?</li>
-      </ul>
+  <!-- Accordion para la sección de Dudas sobre reserva -->
+  <div class="accordion" id="accordionReserva">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingReserva">
+        <button class="accordion-button text-white bg-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseReserva" aria-expanded="true" aria-controls="collapseReserva">
+          Dudas sobre reserva
+        </button>
+      </h2>
+      <div id="collapseReserva" class="accordion-collapse collapse show" aria-labelledby="headingReserva" data-bs-parent="#accordionReserva">
+        <div class="accordion-body bg-light">
+          <ul>
+            <li><button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalReserva">¿Cómo reservo un vehículo?</button></li>
+            <li><button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalModificarReserva">¿Puedo modificar mi reserva?</button></li>
+            <li><button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalMetodoPago">¿Cuáles son los métodos de pago aceptados?</button></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
+
+  <!-- Accordion para la sección de Preguntas frecuentes -->
+  <div class="accordion mt-4" id="accordionPreguntas">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingPreguntas">
+        <button class="accordion-button text-white bg-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePreguntas" aria-expanded="true" aria-controls="collapsePreguntas">
+          Preguntas frecuentes
+        </button>
+      </h2>
+      <div id="collapsePreguntas" class="accordion-collapse collapse" aria-labelledby="headingPreguntas" data-bs-parent="#accordionPreguntas">
+        <div class="accordion-body bg-light">
+          <ul>
+            <li><button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalCostoRenta">¿Cuál es el costo de la renta?</button></li>
+            <li><button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalIncluyeRenta">¿Qué incluye la renta del vehículo?</button></li>
+            <li><button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalAccidente">¿Qué debo hacer en caso de accidente?</button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Accordion para la sección de Aclaraciones y devoluciones -->
+  <div class="accordion mt-4" id="accordionAclaraciones">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingAclaraciones">
+        <button class="accordion-button text-white bg-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAclaraciones" aria-expanded="true" aria-controls="collapseAclaraciones">
+          Aclaraciones y devoluciones
+        </button>
+      </h2>
+      <div id="collapseAclaraciones" class="accordion-collapse collapse" aria-labelledby="headingAclaraciones" data-bs-parent="#accordionAclaraciones">
+        <div class="accordion-body bg-light">
+          <ul>
+            <li><button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalPoliticaCancelacion">¿Cuál es la política de cancelación y reembolso?</button></li>
+            <li><button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalSolicitarDevolucion">¿Cómo solicito una devolución?</button></li>
+            <li><button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalNoSatisfecho">¿Qué sucede si no estoy satisfecho con el servicio?</button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Accordion para la sección de Seguimiento de solicitud -->
+  <div class="accordion mt-4" id="accordionSeguimiento">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingSeguimiento">
+        <button class="accordion-button text-white bg-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeguimiento" aria-expanded="true" aria-controls="collapseSeguimiento">
+          Seguimiento de solicitud
+        </button>
+      </h2>
+      <div id="collapseSeguimiento" class="accordion-collapse collapse" aria-labelledby="headingSeguimiento" data-bs-parent="#accordionSeguimiento">
+        <div class="accordion-body bg-light">
+          <ul>
+            <li><button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalEstadoSolicitud">¿Cómo puedo verificar el estado de mi solicitud?</button></li>
+            <li><button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalTiempoAprobacion">¿Cuánto tiempo tarda el proceso de aprobación?</button></li>
+            <li><button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalRecibirActualizaciones">¿Cómo recibo actualizaciones sobre mi solicitud?</button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Dudas sobre reserva -->
+<div class="modal fade" id="modalReserva" tabindex="-1" aria-labelledby="modalReservaLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-danger text-white">
+        <h5 class="modal-title" id="modalReservaLabel">¿Cómo reservo un vehículo?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Para reservar un vehículo, simplemente selecciona el modelo que deseas, elige las fechas de recogida y devolución, y luego completa el formulario de reserva.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Otros modales... -->
