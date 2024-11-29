@@ -20,7 +20,8 @@ export class ApiService {
     return this.http.post<any>('http://localhost:8080/users/login', payload).pipe(
       tap(response => {
         // Suponiendo que el backend devuelve un token de autenticación
-        localStorage.setItem('authToken', response.token); // Guardar el token en localStorage
+        localStorage.setItem('isLoggedIn', 'true'); // Estado de sesión
+      localStorage.setItem('userRole', response.role); // Guardar el token en localStorage
    //Cambiar para obtener usuarios
   })
 )}

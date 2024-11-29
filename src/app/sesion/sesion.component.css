@@ -22,7 +22,7 @@ button:hover {
     background-color: #8B0000;
 }
 
-button a {
+button {
     border-radius: 50px;
     transition: background-color 0.3s, color 0.3s;
     padding: 5px 20px; 
@@ -35,12 +35,9 @@ button:hover a {
 }
 
 .btn-sm {
-    font-size: 12px;
+    font-size: 15px;
     transition: background-color 0.3s, color 0.3s;
     padding: 5px 10px;
-    border-radius: 5px;
+    border-radius: 50px;
   }
 
-  .btn-sm:hover {
-    color: black !important;
-  }

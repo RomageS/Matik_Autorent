@@ -3,27 +3,38 @@
   <!-- Si no está autenticado, muestra el botón para abrir el modal -->
   <button 
     type="button" 
-    class="btn btn-light text-dark" 
+    class="btn text-white" 
     *ngIf="!isLoggedIn()" 
     (click)="openLoginModal(loginModal)">
     Iniciar Sesión
   </button>
 
   <!-- Si está autenticado, muestra los botones de perfil y cerrar sesión -->
-  <div *ngIf="isLoggedIn()" class="d-flex gap-2">
-    <button 
-      type="button" 
-      class="btn btn-sm" 
-      (click)="goToProfile()">
-      Perfil
-    </button>
-    <button 
-      type="button" 
-      class="btn btn-danger btn-sm text-white" 
-      (click)="logout()">
-      Cerrar Sesión
-    </button>
-  </div>
+ <!-- Si está autenticado, muestra los botones según el rol -->
+ <div *ngIf="isLoggedIn()" class="d-flex gap-2">
+  <!-- Botón para administrador -->
+  <button 
+    class="btn btn-danger btn-sm" 
+    *ngIf="isAdmin()" 
+    (click)="goToAdminPanel()">
+    Panel de Administración
+  </button>
+
+  <!-- Botón para usuario normal -->
+  <button 
+    class="btn btn-sm text-white" 
+    *ngIf="isUser()" 
+    (click)="goToUserProfile()">
+    Perfil de Usuario
+  </button>
+
+  <!-- Botón para cerrar sesión -->
+  <button 
+    class="btn btn-sm text-white" 
+    (click)="logout()">
+    Cerrar Sesión
+  </button>
+</div>
 </div>
 
 <!-- Modal de inicio de sesión -->
@@ -58,14 +69,14 @@
   <div class="modal-footer">
     <button 
       type="button" 
-      class="btn btn-primary" 
+      class="btn text-white" 
       [disabled]="isLoggedIn()" 
       (click)="onSubmit()">
       Iniciar Sesión
     </button>
     <button 
       type="button" 
-      class="btn btn-secondary">
+      class="btn">
       <a class="text-white text-decoration-none" routerLink="registro">Registrarse</a>
     </button>
   </div>
