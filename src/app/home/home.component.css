@@ -30,6 +30,7 @@ h3 {
 /* Contenedor principal para la distribución horizontal */
 .container-wrapper {
   display: flex;
+  background-image: url('/logo_matik_autorent.png');
   gap: 30px;
   margin: 30px;
   justify-content: space-between;
