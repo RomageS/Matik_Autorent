@@ -1,70 +1,138 @@
-body {
+/* ========================
+   Estilos Generales
+   ======================== */
+
+   body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: #f4f7fa; /* Fondo más claro */
+    color: #2c3e50; /* Color oscuro para las letras */
+    margin: 0;
+    padding: 0;
 }
+
+/* ========================
+   Contenedor Principal
+   ======================== */
+
 .container {
     width: 80%;
     margin: auto;
     overflow: hidden;
+    padding: 20px;
+    background-color: #ffffff; /* Fondo blanco para el contenedor */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s ease-out;
 }
-header {
-    background: #800000; /* Color rojo burdeos */
-    color: #fff;
-    padding-top: 30px;
-    min-height: 70px;
-    border-bottom: #004445 3px solid;
-}
-header a {
-    color: #fff;
-    text-decoration: none;
+
+/* ========================
+   Encabezados
+   ======================== */
+
+h2 {
+    color: #2980b9; /* Azul brillante para el encabezado */
+    text-align: left;
+    font-size: 2rem;
+    margin-bottom: 20px;
     text-transform: uppercase;
-    font-size: 16px;
+    transition: color 0.3s ease;
 }
-header ul {
-    padding: 0;
-    list-style: none;
+
+h2:hover {
+    color: #3498db; /* Azul más brillante al pasar el cursor */
 }
-header li {
-    display: inline;
-    padding: 0 20px 0 20px;
-}
-.button {
-    height: 38px;
-    background: #004445;
-    color: #fff;
-    border: 0;
-    padding-left: 20px;
-    padding-right: 20px;
-    cursor: pointer;
-}
-.button:hover {
-    background: #027575;
-}
-.main h1 {
-    color: #800000;
-}
+
+/* ========================
+   Tabla Historial de Reservas
+   ======================== */
+
 .table-container {
-    margin: 20px 0;
-    overflow: auto;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    overflow-x: auto;
 }
+
 table {
     width: 100%;
     border-collapse: collapse;
+    background-color: #ecf0f1; /* Fondo claro para la tabla */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 th, td {
-    padding: 12px;
-    border: 1px solid #ddd;
+    padding: 15px;
     text-align: left;
+    border: 1px solid #bdc3c7; /* Borde más claro */
+    color: #2c3e50;
 }
+
 th {
-    background-color: #800000;
+    background-color: #2980b9; /* Azul para los encabezados */
+    font-weight: bold;
     color: white;
 }
-.animate {
-    animation: fadeIn 2s;
+
+td {
+    background-color: #ecf0f1; /* Fondo claro en las celdas */
 }
+
+tr:nth-child(even) td {
+    background-color: #f1f1f1; /* Fondo alterno claro */
+}
+
+tr:hover {
+    background-color: #3498db; /* Efecto al pasar el cursor */
+    color: white;
+}
+
+/* ========================
+   Sección de Información del Cliente
+   ======================== */
+
+.client-section {
+    margin-bottom: 30px;
+}
+
+.client-section p {
+    font-weight: bold;
+    color: #2980b9; /* Azul brillante para los títulos */
+    margin-bottom: 10px;
+}
+
+/* ========================
+   Listas de Información
+   ======================== */
+
+.info-list {
+    list-style-type: none;
+    padding: 0;
+    margin-left: 20px;
+}
+
+.info-list li {
+    background-color: #ecf0f1; /* Fondo claro para los elementos de lista */
+    padding: 10px 15px;
+    margin: 5px 0;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-list li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================
+   Animación de Fade-In
+   ======================== */
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+.animate {
+    animation: fadeIn 2s ease;
 }

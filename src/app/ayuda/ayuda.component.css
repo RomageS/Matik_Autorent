@@ -29,7 +29,7 @@ body {
   font-size: 2rem; /* Incrementado */
   margin-bottom: 25px; /* Modificado */
   text-transform: uppercase;
-  color: white;
+  color: rgb(59, 59, 59);
 }
 
 /* Párrafos */
@@ -54,15 +54,15 @@ body {
 
 /* Colores personalizados */
 .bg-info {
-  background-color: #cc0000; /* Rojo oscuro */
+  background-color: #FFDF00; /* Rojo oscuro */
 }
 
 .bg-pink {
-  background-color: #660000; /* Rojo vino */
+  background-color: #FFDF00; /* Rojo vino */
 }
 
 .bg-success {
-  background-color: #b30000; /* Rojo brillante */
+  background-color: #FFDF00; /* Rojo brillante */
 }
 
 .bg-primary {
