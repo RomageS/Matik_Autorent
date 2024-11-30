@@ -2,7 +2,7 @@ import { NgbModalModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { provideHttpClient } from '@angular/common/http';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +19,13 @@ import { TerminosComponent } from './terminos/terminos.component';
 import { PrivacidadComponent } from './privacidad/privacidad.component';
 import { ApiService } from './servicios/api.service';
 
+import { registerLocaleData } from '@angular/common';
+import localeEs from '@angular/common/locales/es';
+import { PerfilComponent } from './perfil/perfil.component';
+
+
+registerLocaleData(localeEs, 'es');
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +39,8 @@ import { ApiService } from './servicios/api.service';
     RegistroComponent,
     TerminosComponent,
     PrivacidadComponent,
-
+    ReservasComponent,
+    PerfilComponent
   ],
   
   imports: [
@@ -41,6 +49,7 @@ import { ApiService } from './servicios/api.service';
     NgbModule,
     FormsModule,
     NgbModalModule,
+    ReactiveFormsModule
   ],
 
   providers: [

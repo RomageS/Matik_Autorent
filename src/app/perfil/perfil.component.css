@@ -1,0 +1,13 @@
+.card {
+    border-radius: 10px;
+  }
+  
+  .card-header {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+  }

@@ -1,0 +1,19 @@
+<div class="container py-4">
+    <h2 class="text-center mb-4">Perfil de Usuario</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow-sm">
+          <div class="card-header bg-primary text-white text-center">
+            <h5 class="mb-0">Información del Usuario</h5>
+          </div>
+          <div class="card-body">
+            <p><strong>Nombre:</strong> {{ user.name }}</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+            <p><strong>Teléfono:</strong> {{ user.phone || 'No registrado' }}</p>
+            <p><strong>Dirección:</strong> {{ user.address || 'No registrada' }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

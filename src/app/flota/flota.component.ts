@@ -25,15 +25,15 @@ this.cars = data;
 
   cars = [
     {
-      color: '',
       brand:'',
       model: 'Chevrolet Beat 5P',
-      category: 'Economy Car',
-      passengers: 5,
-      luggage: '2 Maletas',
-      transmission: 'Estándar',
-      doors: 5,
-      ac: true,
+      year: '',
+      color: '',
+      transmission: '',
+      price_day: 0 ,
+      mileage: '',
+      status: '',
+      ac: 'si',
       image: 'https://via.placeholder.com/300x200'
     }
   ];

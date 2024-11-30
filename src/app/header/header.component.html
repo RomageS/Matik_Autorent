@@ -7,10 +7,10 @@
       <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" #navbarCollapse>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-            <a class="nav-link text-white" routerLink="#">Change To English</a>
+            <a class="nav-link text-white" routerLink="#" >English</a>
         </li>
         <li class="nav-item">
             <a class="nav-link text-white" routerLink="flota">Flota</a>
@@ -22,32 +22,10 @@
             <a class="nav-link text-white" routerLink="ayuda">Ayuda</a>
           </li>
         </ul>
-  
-        <!-- codigo para colocar form de busqueda -->
-  
-        <!--<form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>-->
 
-         <!-- Botones de Registro y Sesión -->
-        <div *ngIf="!isLoggedIn; else loggedInTemplate">
-        <button type="button" class="btn text-white"><a class="text-white" routerLink="registro">Registrarse</a></button>
+
         <app-sesion></app-sesion>
-          </div>
-
-          <!-- Imagen cuando está autenticado -->
-          <ng-template #loggedInTemplate>
-            <div class="d-flex align-items-center">
-              <img
-                src="ruta_a_tu_avatar.jpg"
-                alt="Usuario"
-                class="rounded-circle"
-                style="width: 40px; height: 40px; object-fit: cover;"
-              />
-              <button class="btn text-white ms-2" (click)="logout()">Cerrar sesión</button>
-            </div>
-          </ng-template>
+        
       </div>
     </div>
   </nav>

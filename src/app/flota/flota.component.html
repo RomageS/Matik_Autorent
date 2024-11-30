@@ -1,3 +1,4 @@
+<body>
 <div class="container mt-5">
     <div class="row">
       <div class="col-md-4" *ngFor="let car of cars">
@@ -5,20 +6,18 @@
           <img [src]="car.image" class="img-thumbnail" alt="{{ car.image }}">
           <div class="card-body">
             <h5 class="card-title">{{ car.model }}</h5>
-            <p class="card-text text-muted">{{ car.category }}</p>
             <ul class="list-unstyled mb-3">
               <li><strong>Marca:</strong> {{ car.brand }}</li>
-              <li><strong>Pasajeros:</strong> {{ car.color }}</li>
-              <li><strong>Equipaje:</strong> {{ car.luggage }}</li>
+              <li><strong>Año:</strong> {{ car.year }}</li>
+              <li><strong>Color:</strong> {{ car.color }}</li>
               <li><strong>Transmisión:</strong> {{ car.transmission }}</li>
-              <li><strong>Puertas:</strong> {{ car.doors }}</li>
-              <li><strong>Aire acondicionado:</strong> {{ car.ac ? 'Sí' : 'No' }}</li>
+              <li><strong>Precio Día:</strong> {{ car.price_day | currency }}</li>
+              <li><strong>Aire acondicionado:</strong> {{ 'Sí' }}</li>
             </ul>
             <button class="btn btn-danger w-100 mb-2">RESERVAR</button>
-            <button class="btn btn-outline-secondary w-100">+ Detalles del vehículo</button>
           </div>
         </div>
       </div>
     </div>
   </div>
-  
+</body>
