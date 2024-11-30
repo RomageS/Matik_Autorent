@@ -6,6 +6,12 @@ import { Observable, tap } from 'rxjs';
   providedIn: 'any',
 })
 export class ApiService {
+  updateAddress(address: string) {
+    throw new Error('Method not implemented.');
+  }
+  getUserProfile() {
+    throw new Error('Method not implemented.');
+  }
   private apiUrl = 'http://localhost:8080'; // Cambia esta URL por tu API
 
   constructor(private http: HttpClient) {}
@@ -25,6 +31,11 @@ export class ApiService {
    //Cambiar para obtener usuarios
   })
 )}
+
+changePassword(data: { email: string; currentPassword: string; newPassword: string }): Observable<any> {
+  return this.http.put<any>('http://localhost:8080/users/change-password', data); // Cambia la URL según tu backend
+}
+
 
   // Ejemplo: obtener datos
   obtenerDatos(): Observable<any> {

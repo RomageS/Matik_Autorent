@@ -1,0 +1,18 @@
+.card {
+    border-radius: 10px;
+  }
+  
+  .card-header {
+    font-weight: bold;
+  }
+  
+  .btn {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
