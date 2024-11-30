@@ -30,16 +30,4 @@ export class PerfilComponent implements OnInit {
       }
     });
   }
-
-  updateUserInfo(): void {
-    this.apiService.updateUserProfile(this.user).subscribe({
-      next: () => {
-        alert('Información actualizada con éxito');
-      },
-      error: (err) => {
-        alert('Error al actualizar la información');
-        console.error(err);
-      }
-    });
-  }
 }

@@ -1,65 +1,16 @@
 <div class="container py-4">
     <h2 class="text-center mb-4">Perfil de Usuario</h2>
-    <div class="row">
-      <!-- Información del Usuario -->
-      <div class="col-md-6 mb-4">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
         <div class="card shadow-sm">
-          <div class="card-header bg-primary text-white">
-            <h5 class="mb-0">Información General</h5>
+          <div class="card-header bg-primary text-white text-center">
+            <h5 class="mb-0">Información del Usuario</h5>
           </div>
           <div class="card-body">
             <p><strong>Nombre:</strong> {{ user.name }}</p>
             <p><strong>Email:</strong> {{ user.email }}</p>
             <p><strong>Teléfono:</strong> {{ user.phone || 'No registrado' }}</p>
             <p><strong>Dirección:</strong> {{ user.address || 'No registrada' }}</p>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Editar Información del Usuario -->
-      <div class="col-md-6 mb-4">
-        <div class="card shadow-sm">
-          <div class="card-header bg-secondary text-white">
-            <h5 class="mb-0">Editar Información</h5>
-          </div>
-          <div class="card-body">
-            <form (ngSubmit)="updateUserInfo()">
-              <div class="mb-3">
-                <label for="name" class="form-label">Nombre</label>
-                <input
-                  type="text"
-                  id="name"
-                  class="form-control"
-                  [(ngModel)]="user.name"
-                  name="name"
-                  placeholder="Ingresa tu nombre"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="phone" class="form-label">Teléfono</label>
-                <input
-                  type="text"
-                  id="phone"
-                  class="form-control"
-                  [(ngModel)]="user.phone"
-                  name="phone"
-                  placeholder="Ingresa tu número de teléfono"
-                />
-              </div>
-              <div class="mb-3">
-                <label for="address" class="form-label">Dirección</label>
-                <input
-                  type="text"
-                  id="address"
-                  class="form-control"
-                  [(ngModel)]="user.address"
-                  name="address"
-                  placeholder="Ingresa tu dirección"
-                />
-              </div>
-              <button type="submit" class="btn btn-secondary w-100">Guardar Cambios</button>
-            </form>
           </div>
         </div>
       </div>
