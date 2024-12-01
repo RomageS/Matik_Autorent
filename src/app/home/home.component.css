@@ -154,25 +154,3 @@ iframe {
   .container-wrapper {
     flex-direction: column;
     align-items: center;
-  }
-
-  .carousel-inner img {
-    height: 400px;
-  }
-
-  .container {
-    flex: 1 1 100%;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  h2 {
-    font-size: 1.8rem;
-  }
-
-  h3 {
-    font-size: 1.5rem;
-  }
-}
