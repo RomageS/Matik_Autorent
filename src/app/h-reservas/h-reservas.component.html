@@ -1,1 +1,29 @@
-<p>h-reservas works!</p>
+<div class="hReserva-container">
+    <h1 class="titulo">Reservas Registradas</h1>
+    <table class="tabla">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Cliente</th>
+          <th>Vehículo</th>
+          <th>Fecha</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let reserva of reservas">
+          <td>{{ reserva.id }}</td>
+          <td>{{ reserva.cliente }}</td>
+          <td>{{ reserva.vehiculo }}</td>
+          <td>{{ reserva.fecha }}</td>
+          <td>{{ reserva.estado }}</td>
+          <td>
+            <button class="btn-editar" (click)="editarReserva(reserva)">Editar</button>
+            <button class="btn-eliminar" (click)="eliminarReserva(reserva.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

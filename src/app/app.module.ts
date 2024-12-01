@@ -17,7 +17,9 @@ import { HeaderComponent } from './header/header.component';
 import { RegistroComponent } from './registro/registro.component';
 import { TerminosComponent } from './terminos/terminos.component';
 import { PrivacidadComponent } from './privacidad/privacidad.component';
-import { ApiService } from './servicios/api.service';
+import { VehicleService } from './servicios/vehicle.service';
+import { ReservaService } from './servicios/reserva.service';
+import { UserService } from './servicios/user.service';
 
 import { PerfilComponent } from './perfil/perfil.component';
 <<<<<<< HEAD

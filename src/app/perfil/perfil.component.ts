@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../servicios/api.service';
+import { UserService } from '../servicios/user.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-perfil',
@@ -14,20 +15,26 @@ export class PerfilComponent implements OnInit {
     address: ''
   };
 
-  constructor(private apiService: ApiService) {}
+  constructor(private userService: UserService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.loadUserProfile();
   }
 
   loadUserProfile(): void {
-    this.apiService.getUserProfile().subscribe({
-      next: (data) => {
-        this.user = data;
-      },
-      error: (err) => {
-        console.error('Error al cargar el perfil del usuario:', err);
-      }
-    });
-  }
+    const userId = this.route.snapshot.paramMap.get('id'); // Obtiene el ID de la URL
+    if (userId) {
+      this.userService.getUserById(Number(userId)).subscribe({
+        next: (data) => {
+          this.user = data;
+        },
+        error: (err) => {
+          console.error('Error al cargar el perfil del usuario:', err);
+        }
+      });
+    } else {
+      console.error('No se encontró el ID del usuario en la URL');
+    }
+  
+}
 }

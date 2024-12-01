@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
-import { ApiService } from '../servicios/api.service';
+import { UserService } from '../servicios/user.service';
 
 @Component({
   selector: 'app-sesion',
@@ -15,12 +15,12 @@ export class SesionComponent {
 
   constructor(
     private modalService: NgbModal,
-    private apiService: ApiService,
+    private userService: UserService,
     private router: Router
   ) {}
 
   onSubmit() {
-    this.apiService.login(this.email, this.password).subscribe({
+    this.userService.login(this.email, this.password).subscribe({
       next: (response) => {
         console.log('Inicio de sesión exitoso:', response);
 

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ApiService } from '../servicios/api.service';  // Ajusta la ruta de tu servicio
+import { UserService } from '../servicios/user.service';  // Ajusta la ruta de tu servicio
 import { Router } from '@angular/router';
 
 @Component({
@@ -15,7 +15,7 @@ export class RegistroComponent {
 
   constructor(
     private fb: FormBuilder,
-    private apiService: ApiService,
+    private userService: UserService,
     private router: Router
   ) {
 
@@ -46,7 +46,7 @@ export class RegistroComponent {
     }
 
     const { name, lastName, email, password } = this.registroForm.value;
-     this.apiService.registerUser(name, lastName, email, password).subscribe(
+     this.userService.registerUser(name, lastName, email, password).subscribe(
       (response) => {
         console.log('Usuario registrado:', response);
         this.mensajeSuccess = '¡Registro exitoso! Ya puedes iniciar sesión.';
