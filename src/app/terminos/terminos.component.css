@@ -1,4 +1,161 @@
+/* Estilos Generales */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  overflow-x: hidden; /* Para evitar el desplazamiento horizontal */
+  text-align: center; /* Centrar todo el texto */
+}
+
+/* Encabezados Centrados y en Negritas */
+h1, h2, h3 {
+  color: #111111;
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold; /* Negritas */
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 2.8rem;
+  margin-top: 30px; /* Agregar espacio superior */
+}
+
+h2 {
+  font-size: 2.2rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+/* Contenedor Principal de la Página */
+.container-wrapper {
+  display: flex;
+  gap: 30px;
+  margin: 30px auto;
+  justify-content: center; /* Centrar los contenedores */
+  flex-wrap: wrap;
+  max-width: 1200px; /* Limitar el ancho máximo */
+  padding: 0 20px; /* Añadir algo de espacio lateral */
+}
+
+/* Hero Section */
 .hero {
+<<<<<<< HEAD
+  position: relative;
+  text-align: center;
+  background: url('/public/logo_matik_autorent.png') no-repeat center center/cover;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px; /* Espaciado inferior */
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+  padding: 30px; /* Más padding para espaciado */
+  border-radius: 10px;
+  color: #fff;
+  text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: bold; /* Negritas */
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+/* Términos y Condiciones */
+.terms-section {
+  padding: 60px 30px; /* Más padding para espaciado */
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  animation: slideUp 1s ease-out;
+  text-align: left; /* Alinear a la izquierda */
+}
+
+.terms-section h1 {
+  font-size: 2.5rem;
+  font-weight: bold; /* Negritas */
+  margin-bottom: 20px;
+}
+
+.terms-section p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 20px; /* Añadir espacio inferior */
+  text-align: justify;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media Queries para Pantallas Pequeñas */
+@media screen and (max-width: 768px) {
+  .hero {
+    height: 300px;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text p {
+    font-size: 1.2rem;
+  }
+
+  .terms-section {
+    padding: 30px 10px;
+  }
+
+  .terms-section h1 {
+    font-size: 2rem;
+  }
+
+  .terms-section p {
+    font-size: 1rem;
+  }
+}
+
     background-image: url('https://via.placeholder.com/2000x600');
     background-size: cover;
     background-position: center;
@@ -22,3 +179,4 @@
     line-height: 1.6; 
     margin: 40px;
   }
+>>>>>>> 4c275d17e4a5f42c82a97a122893ec1549941fc1
