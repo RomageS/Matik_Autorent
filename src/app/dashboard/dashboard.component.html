@@ -1,73 +1,39 @@
-<div class="container">
-    <div class="main animate">
-        <h2>Historial de Reservas</h2>
-        <div class="table-container">
-            <table>
-                <tr>
-                    <th>Cliente</th>
-                    <th>Fecha de Reserva</th>
-                    <th>Vehículo Reservado</th>
-                    <th>Duración</th>
-                    <th>Estado</th>
-                </tr>
-                <tr>
-                    <td>Juan Pérez</td>
-                    <td>2024-11-15</td>
-                    <td>Toyota Corolla</td>
-                    <td>3 días</td>
-                    <td>Confirmada</td>
-                </tr>
-                <tr>
-                    <td>Ana García</td>
-                    <td>2024-10-22</td>
-                    <td>Honda Civic</td>
-                    <td>5 días</td>
-                    <td>Cancelada</td>
-                </tr>
-                <tr>
-                    <td>Luis López</td>
-                    <td>2024-09-30</td>
-                    <td>Ford Focus</td>
-                    <td>7 días</td>
-                    <td>Completada</td>
-                </tr>
-            </table>
-        </div>
+<div class="dashboard-container">
 
-        <h2>Autos Recomendados</h2>
-        <p><strong>Cliente Juan Pérez:</strong></p>
-        <ul>
-            <li>Honda Accord</li>
-            <li>Nissan Altima</li>
-        </ul>
-        <p><strong>Cliente Ana García:</strong></p>
-        <ul>
-            <li>Mazda 3</li>
-            <li>Hyundai Elantra</li>
-        </ul>
-
-        <h2>Información Adicional</h2>
-        <p><strong>Datos Personales del Cliente:</strong></p>
-        <ul>
-            <li>Nombre</li>
-            <li>Dirección</li>
-            <li>Teléfono</li>
-            <li>Email</li>
-        </ul>
-
-        <p><strong>Preferencias del Cliente:</strong></p>
-        <ul>
-            <li>Tipo de vehículo favorito (sedán, SUV, etc.)</li>
-            <li>Presupuesto</li>
-        </ul>
-
-        <h2>Notificaciones</h2>
-        <ul>
-            <li>Recordatorios de próximas reservas</li>
-            <li>Alertas de vencimiento de alquiler</li>
-        </ul>
-
-        <h2>Comentarios y Sugerencias</h2>
-        <p>Sección para que los clientes dejen comentarios y sugerencias sobre el servicio y los vehículos.</p>
+    <div class="header bg-primario text-white py-3 px-4">
+      <h1 class="m-0">Panel de Control</h1>
     </div>
-</div>
+  
+    <div class="content py-4 px-4">
+      <!-- Tarjetas de resumen -->
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card tarjeta">
+            <div class="card-body text-center">
+              <h5 class="card-title">Usuarios Registrados</h5>
+              <h2 class="card-number">{{ usuariosRegistrados }}</h2>
+              <a routerLink="usuario" class="btn btn-acento">Ver Detalles</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card tarjeta">
+            <div class="card-body text-center">
+              <h5 class="card-title">Vehículos Registrados</h5>
+              <h2 class="card-number">{{ vehiculosRegistrados }}</h2>
+              <a routerLink="vehículo" class="btn btn-acento">Ver Detalles</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card tarjeta">
+            <div class="card-body text-center">
+              <h5 class="card-title">Reservas Realizadas</h5>
+              <h2 class="card-number">{{ reservasRealizadas }}</h2>
+              <a routerLink="hReserva" class="btn btn-acento">Ver Detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

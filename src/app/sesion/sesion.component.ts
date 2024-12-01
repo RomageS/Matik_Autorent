@@ -57,11 +57,11 @@ export class SesionComponent {
   }
 
   goToAdminPanel() {
-    this.router.navigate(['/dashboard']); // Ruta para administradores
+    this.router.navigate(['dashboard']); // Ruta para administradores
   }
   
   goToUserProfile() {
-    this.router.navigate(['/perfil']); // Ruta para usuarios normales
+    this.router.navigate(['perfil']); // Ruta para usuarios normales
   }
 
   openLoginModal(content: any) {

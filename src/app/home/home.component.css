@@ -61,6 +61,8 @@ body {
     width: 30%;
     transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
   }
+
+ 
   
   .container:hover {
     transform: scale(1.05);
@@ -176,4 +178,8 @@ body {
       max-width: 90%;
       margin: 0 auto;
     }
+  }
+
+  ul {
+    list-style-type: none;
   }
