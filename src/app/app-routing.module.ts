@@ -9,7 +9,6 @@ import { SesionComponent } from './sesion/sesion.component';
 import { RegistroComponent } from './registro/registro.component';
 import { PrivacidadComponent } from './privacidad/privacidad.component';
 import { TerminosComponent } from './terminos/terminos.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { PerfilComponent } from './perfil/perfil.component';
 
 const routes: Routes = [
@@ -23,7 +22,6 @@ const routes: Routes = [
   {path: 'registro/privacidad', component: PrivacidadComponent},
   {path: 'terminos', component:TerminosComponent},
   {path: 'registro/terminos', component:TerminosComponent},
-  {path: 'dashboard', component:DashboardComponent},
   {path: 'perfil', component:PerfilComponent},
   {path: '**', redirectTo: '', pathMatch: 'full'},
   

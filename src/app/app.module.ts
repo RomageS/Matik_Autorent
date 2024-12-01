@@ -22,6 +22,7 @@ import { ApiService } from './servicios/api.service';
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
 import { PerfilComponent } from './perfil/perfil.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 registerLocaleData(localeEs, 'es');
@@ -40,7 +41,8 @@ registerLocaleData(localeEs, 'es');
     TerminosComponent,
     PrivacidadComponent,
     ReservasComponent,
-    PerfilComponent
+    PerfilComponent,
+    DashboardComponent
   ],
   
   imports: [
