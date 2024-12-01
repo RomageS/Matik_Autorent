@@ -11,7 +11,7 @@ export class FlotaComponent {
   
  }
 ngOnInit():void {
-this.service.obtenerDatos().subscribe((data) => {
+this.service.getAllVehiculos().subscribe((data) => {
 this.cars = data;
 
 

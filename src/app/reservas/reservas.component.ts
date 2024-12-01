@@ -13,13 +13,32 @@ export class ReservasComponent implements OnInit {
     codigoDescuento: '',
   };
 
-  minDate: string = '';
+  minDate: string = ''; // Fecha mínima para el campo de entrega
 
-  constructor() {}
+  constructor(private reservaService: ReservaService) {} // Inyecta el servicio
 
   ngOnInit() {
     const today = new Date();
     this.minDate = today.toISOString().split('T')[0]; // Configura la fecha mínima como hoy
   }
 
+  realizarReserva(): void {
+    // Validación adicional (opcional)
+    if (!this.reserva.fechaEntrega || !this.reserva.fechaRegreso) {
+      alert('Por favor, completa todas las fechas requeridas.');
+      return;
+    }
+
+    // Enviar los datos al servicio
+    this.reservaService.crearReserva(this.reserva).subscribe(
+      (response) => {
+        alert('Reserva realizada con éxito');
+        this.reserva = { fechaEntrega: '', fechaRegreso: '', codigoDescuento: '' }; // Limpia el formulario
+      },
+      (error) => {
+        console.error('Error al realizar la reserva:', error);
+        alert('Ocurrió un error al realizar la reserva. Intenta nuevamente.');
+      }
+    );
+  }
 }

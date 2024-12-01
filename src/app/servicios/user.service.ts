@@ -1,33 +1,44 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, tap } from 'rxjs';
-
+import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'any',
 })
 export class UserService {
-  getUserProfile() {
-    throw new Error('Method not implemented.');
-  }
-
-  private apiUrl = 'http://localhost:8080'; // Cambia esta URL por tu API
+  private apiUrl = 'http://localhost:8080/users'; // URL base de la API
 
   constructor(private http: HttpClient) {}
 
-  registerUser(name: string, lastName: string, email: string, password: string): Observable<any> {
-    const payload = { name, lastName, email, password };
-    return this.http.post<any>(`${this.apiUrl}/users`, payload); // Cambia esta ruta a la correcta
+  // Obtener todos los usuarios
+  getAllUsers(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl);
   }
 
+  // Obtener usuario por ID
+  getUserById(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${id}`);
+  }
+
+  // Registrar un nuevo usuario
+  registerUser(name: string, lastName: string, email: string, password: string): Observable<any> {
+    const payload = { name, lastName, email, password };
+    return this.http.post<any>(this.apiUrl, payload);
+  }
+
+  // Actualizar un usuario existente
+  updateUser(id: number, user: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/${id}`, user);
+  }
+
+  // Eliminar un usuario por ID
+  deleteUser(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}/${id}`);
+  }
+
+  // Iniciar sesión
   login(email: string, password: string): Observable<any> {
     const payload = { email, password };
-    return this.http.post<any>('http://localhost:8080/users/login', payload).pipe(
-      tap(response => {
-        // Suponiendo que el backend devuelve un token de autenticación
-        localStorage.setItem('isLoggedIn', 'true'); // Estado de sesión
-      localStorage.setItem('userRole', response.role); // Guardar el token en localStorage
-   //Cambiar para obtener usuarios
-  })
-)}
+    return this.http.post<any>(`${this.apiUrl}/login`, payload);
+  }
 }

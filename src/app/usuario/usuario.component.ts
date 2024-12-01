@@ -1,44 +1,86 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../servicios/user.service'; // Importa el servicio de usuarios
 
 @Component({
   selector: 'app-usuario',
   templateUrl: './usuario.component.html',
-  styleUrl: './usuario.component.css'
+  styleUrls: ['./usuario.component.css']
 })
-export class UsuarioComponent implements OnInit{
-  usuarios = [
-    { id: 1, nombre: 'Juan Pérez', email: 'juan@example.com', telefono: '555-1234' },
-    { id: 2, nombre: 'Ana López', email: 'ana@example.com', telefono: '555-5678' },
-    { id: 3, nombre: 'Carlos Ruiz', email: 'carlos@example.com', telefono: '555-8765' }
-  ];
+export class UsuarioComponent implements OnInit {
+  usuarios: any[] = []; // Lista de usuarios filtrados
+  usuarioSeleccionado: any = {}; // Usuario actualmente en edición o nuevo
 
-  constructor() {}
+  constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    // Aquí puedes hacer una llamada al backend para cargar usuarios desde la base de datos.
-    // Ejemplo:
-    // this.cargarUsuarios();
+    this.cargarUsuarios(); // Carga los usuarios al inicializar el componente
   }
 
-  editarUsuario(usuario: any): void {
-    alert(`Editar usuario: ${usuario.nombre}`);
-    // Lógica para editar usuario
+  // Método para cargar usuarios desde la API
+  cargarUsuarios(): void {
+    this.userService.getAllUsers().subscribe(
+      (data) => {
+        // Filtra los usuarios para excluir aquellos con rol ADMIN
+        this.usuarios = data.filter((usuario: any) => usuario.role !== 'ADMIN');
+      },
+      (error) => {
+        console.error('Error al cargar usuarios:', error); // Manejo de errores
+      }
+    );
   }
 
-  eliminarUsuario(id: number): void {
-    const confirmacion = confirm('¿Estás seguro de eliminar este usuario?');
-    if (confirmacion) {
-      this.usuarios = this.usuarios.filter(usuario => usuario.id !== id);
-      alert('Usuario eliminado.');
+  // Método para guardar un usuario (nuevo o actualizado)
+  guardarUsuario(): void {
+    if (this.usuarioSeleccionado.id) {
+      // Si el usuario tiene un ID, lo actualizamos
+      this.userService.updateUser(this.usuarioSeleccionado.id, this.usuarioSeleccionado).subscribe(
+        () => {
+          alert('Usuario actualizado con éxito.');
+          this.cargarUsuarios(); // Recarga la lista de usuarios
+          this.usuarioSeleccionado = {}; // Limpia el formulario
+        },
+        (error) => {
+          console.error('Error al actualizar el usuario:', error);
+        }
+      );
+    } else {
+      // Si no tiene un ID, creamos un nuevo usuario
+      this.userService.registerUser(
+        this.usuarioSeleccionado.nombre,
+        '',
+        this.usuarioSeleccionado.email,
+        ''
+      ).subscribe(
+        () => {
+          alert('Usuario registrado con éxito.');
+          this.cargarUsuarios(); // Recarga la lista de usuarios
+          this.usuarioSeleccionado = {}; // Limpia el formulario
+        },
+        (error) => {
+          console.error('Error al registrar el usuario:', error);
+        }
+      );
     }
   }
 
-  // Ejemplo de función para cargar usuarios desde un servicio (puedes implementarla):
-  /*
-  cargarUsuarios(): void {
-    this.miServicio.obtenerUsuarios().subscribe((data: any) => {
-      this.usuarios = data;
-    });
+  // Método para seleccionar un usuario para edición
+  editarUsuario(usuario: any): void {
+    this.usuarioSeleccionado = { ...usuario }; // Carga los datos del usuario en el formulario
   }
-  */
+
+  // Método para eliminar un usuario
+  eliminarUsuario(id: number): void {
+    const confirmacion = confirm('¿Estás seguro de eliminar este usuario?');
+    if (confirmacion) {
+      this.userService.deleteUser(id).subscribe(
+        () => {
+          alert('Usuario eliminado con éxito.');
+          this.cargarUsuarios(); // Recarga la lista de usuarios
+        },
+        (error) => {
+          console.error('Error al eliminar el usuario:', error);
+        }
+      );
+    }
+  }
 }
