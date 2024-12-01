@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../servicios/api.service';
+import { UserService } from '../servicios/user.service';
 
 @Component({
   selector: 'app-perfil',
@@ -14,14 +14,14 @@ export class PerfilComponent implements OnInit {
     address: ''
   };
 
-  constructor(private apiService: ApiService) {}
+  constructor(private userService: UserService) {}
 
   ngOnInit(): void {
     this.loadUserProfile();
   }
 
   loadUserProfile(): void {
-    this.apiService.getUserProfile().subscribe({
+    this.userService.getUserProfile().subscribe({
       next: (data) => {
         this.user = data;
       },

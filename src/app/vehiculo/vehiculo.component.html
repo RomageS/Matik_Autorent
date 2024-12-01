@@ -1,2 +1,27 @@
-<p>vehiculo works!</p>
-<a routerLink=""></a>
+<div class="vehiculo-container">
+    <h1 class="titulo">Vehículos Registrados</h1>
+    <table class="tabla">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Modelo</th>
+          <th>Placa</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vehiculo of vehiculos">
+          <td>{{ vehiculo.id }}</td>
+          <td>{{ vehiculo.modelo }}</td>
+          <td>{{ vehiculo.placa }}</td>
+          <td>{{ vehiculo.estado }}</td>
+          <td>
+            <button class="btn-editar" (click)="editarVehiculo(vehiculo)">Editar</button>
+            <button class="btn-eliminar" (click)="eliminarVehiculo(vehiculo.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../servicios/api.service';
+import { VehicleService } from '../servicios/vehicle.service';
 
 @Component({
   selector: 'app-flota',
@@ -7,7 +7,7 @@ import { ApiService } from '../servicios/api.service';
   styleUrl: './flota.component.css'
 })
 export class FlotaComponent {
- constructor(private service: ApiService) {
+ constructor(private service: VehicleService) {
   
  }
 ngOnInit():void {

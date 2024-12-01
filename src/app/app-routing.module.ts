@@ -12,12 +12,13 @@ import { TerminosComponent } from './terminos/terminos.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { VehiculoComponent } from './vehiculo/vehiculo.component';
+import { HReservasComponent } from './h-reservas/h-reservas.component';
 
 const routes: Routes = [
   {path: '',component: HomeComponent},
   {path: 'flota', component: FlotaComponent},
   {path: 'ayuda', component: AyudaComponent},
-  {path: 'usuario', component:UsuarioComponent},
   {path: 'reservas', component: ReservasComponent},
   {path: 'ubicacion', component: UbicacionComponent},
   {path: 'registro', component: RegistroComponent},
@@ -28,6 +29,8 @@ const routes: Routes = [
   {path: 'dashboard/usuario', component:UsuarioComponent},
   {path: 'perfil', component:PerfilComponent},
   {path: 'dashboard', component:DashboardComponent},
+  {path: 'dashboard/vehiculo', component:VehiculoComponent},
+  {path: 'dashboard/hReserva', component:HReservasComponent},
   {path: '**', redirectTo: '', pathMatch: 'full'},
   
 ];
