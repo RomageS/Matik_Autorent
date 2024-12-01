@@ -15,6 +15,7 @@ import { VehiculoComponent } from './vehiculo/vehiculo.component';
 import { HReservasComponent } from './h-reservas/h-reservas.component';
 
 import { PerfilComponent } from './perfil/perfil.component';
+import { UsuarioComponent } from './usuario/usuario.component';
 
 
 const routes: Routes = [
@@ -29,7 +30,7 @@ const routes: Routes = [
   {path: 'terminos', component:TerminosComponent},
   {path: 'registro/terminos', component:TerminosComponent},
   {path: 'dashboard', component:DashboardComponent},
-
+  {path: 'dashboard/usuario', component:UsuarioComponent},
   {path: 'dashboard/vehiculo', component:VehiculoComponent},
   {path: 'dashboard/hReserva', component:HReservasComponent},
 

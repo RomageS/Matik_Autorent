@@ -22,13 +22,12 @@ import { ReservaService } from './servicios/reserva.service';
 import { UserService } from './servicios/user.service';
 
 import { PerfilComponent } from './perfil/perfil.component';
-<<<<<<< HEAD
-=======
+
 import { UsuarioComponent } from './usuario/usuario.component';
 import { FooterComponent } from './footer/footer.component';
 import { VehiculoComponent } from './vehiculo/vehiculo.component';
 import { HReservasComponent } from './h-reservas/h-reservas.component';
->>>>>>> 4c275d17e4a5f42c82a97a122893ec1549941fc1
+
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 
@@ -47,13 +46,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     PrivacidadComponent,
     ReservasComponent,
     PerfilComponent,
-<<<<<<< HEAD
-=======
+
     UsuarioComponent,
     FooterComponent,
     VehiculoComponent,
     HReservasComponent,
->>>>>>> 4c275d17e4a5f42c82a97a122893ec1549941fc1
     DashboardComponent
   ],
   
