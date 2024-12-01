@@ -32,6 +32,17 @@
     text-decoration-line: none;
 }
 
+.search {
+  transition: background-color 0.3s, color 0.3s;
+  padding: 5px 20px; 
+  border-radius: 50px;
+}
+
+.search:hover {
+  background-color: #f0f0f0;
+    color: black !important; 
+}
+
 button:hover a {
     background-color: #f0f0f0;
     color: black !important; 
@@ -56,3 +67,6 @@ button:hover a {
         background-color: #f0f0f0;
       }
 
+app-sesion.navbar.collapse{
+  padding-top: 20px;
+}

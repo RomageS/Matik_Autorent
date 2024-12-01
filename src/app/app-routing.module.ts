@@ -9,12 +9,14 @@ import { SesionComponent } from './sesion/sesion.component';
 import { RegistroComponent } from './registro/registro.component';
 import { PrivacidadComponent } from './privacidad/privacidad.component';
 import { TerminosComponent } from './terminos/terminos.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { PerfilComponent } from './perfil/perfil.component';
 
 const routes: Routes = [
   {path: '',component: HomeComponent},
   {path: 'flota', component: FlotaComponent},
   {path: 'ayuda', component: AyudaComponent},
+  {path: 'usuario', component:UsuarioComponent},
   {path: 'reservas', component: ReservasComponent},
   {path: 'ubicacion', component: UbicacionComponent},
   {path: 'registro', component: RegistroComponent},
@@ -22,6 +24,7 @@ const routes: Routes = [
   {path: 'registro/privacidad', component: PrivacidadComponent},
   {path: 'terminos', component:TerminosComponent},
   {path: 'registro/terminos', component:TerminosComponent},
+  {path: 'dashboard', component:DashboardComponent},
   {path: 'perfil', component:PerfilComponent},
   {path: '**', redirectTo: '', pathMatch: 'full'},
   

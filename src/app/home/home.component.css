@@ -255,100 +255,23 @@ h3 {
     align-items: center;
   }
 
-  /* Carrusel de imágenes */
   .carousel-inner img {
-    height: 300px;
+    height: 400px;
   }
 
-  /* Ajustes en las Secciones de Contenedor */
   .container {
     flex: 1 1 100%;
-    margin-bottom: 20px;
   }
 
-  .container-wrapper {
-    gap: 20px;
+  h1 {
+    font-size: 2rem;
   }
 
-  /* Ajuste de la Sección de Ubicación */
-  .location iframe {
-    height: 250px;
-  }
-
-  .location h3 {
+  h2 {
     font-size: 1.8rem;
   }
 
-  .location-text {
-    font-size: 1rem;
-    margin: 20px;
-  }
-
-  /* Ajustes en los Coches Destacados */
-  .car-grid .col-md-3 {
-    flex: 1 1 45%;
-    margin-bottom: 20px;
-  }
-
-  /* Ajustes en los Botones */
-  .btn-danger {
-    padding: 10px 25px;
-  }
-}
-
-/* Sección destacada mejorada */
-.highlighted-section {
-  background: linear-gradient(135deg, #f0f8ff, #0072BB);
-  color: #050505;
-  padding: 50px 20px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 1s ease-in-out;
-}
-
-.highlighted-section h1 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  letter-spacing: 1px;
-  animation: slideIn 1.5s ease-in-out;
-}
-
-.highlighted-section p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  animation: fadeInText 2s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeInText {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
+  h3 {
+    font-size: 1.5rem;
   }
 }

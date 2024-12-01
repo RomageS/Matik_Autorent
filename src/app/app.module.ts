@@ -19,13 +19,16 @@ import { TerminosComponent } from './terminos/terminos.component';
 import { PrivacidadComponent } from './privacidad/privacidad.component';
 import { ApiService } from './servicios/api.service';
 
-import { registerLocaleData } from '@angular/common';
-import localeEs from '@angular/common/locales/es';
 import { PerfilComponent } from './perfil/perfil.component';
+<<<<<<< HEAD
+=======
+import { UsuarioComponent } from './usuario/usuario.component';
+import { FooterComponent } from './footer/footer.component';
+import { VehiculoComponent } from './vehiculo/vehiculo.component';
+import { HReservasComponent } from './h-reservas/h-reservas.component';
+>>>>>>> 4c275d17e4a5f42c82a97a122893ec1549941fc1
 import { DashboardComponent } from './dashboard/dashboard.component';
 
-
-registerLocaleData(localeEs, 'es');
 
 @NgModule({
   declarations: [
@@ -42,6 +45,13 @@ registerLocaleData(localeEs, 'es');
     PrivacidadComponent,
     ReservasComponent,
     PerfilComponent,
+<<<<<<< HEAD
+=======
+    UsuarioComponent,
+    FooterComponent,
+    VehiculoComponent,
+    HReservasComponent,
+>>>>>>> 4c275d17e4a5f42c82a97a122893ec1549941fc1
     DashboardComponent
   ],
   

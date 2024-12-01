@@ -1,1 +1,46 @@
+<<<<<<< HEAD
 <p>dashboard works!</p>
+=======
+<div class="dashboard-container">
+    <div class="header bg-primario text-white py-2 px-4">
+      <h1 class="m-0">Panel de Control</h1>
+    </div>
+  
+    <div class="content py-4 px-4">
+      <!-- Tarjetas de resumen -->
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card tarjeta">
+            <div class="card-body text-center">
+              <h5 class="card-title">Usuarios Registrados</h5>
+              <h2 class="card-number">{{ usuariosRegistrados }}</h2>
+              <a routerLink="usuario" class="btn btn-acento">Ver Detalles</a>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card tarjeta">
+            <div class="card-body text-center">
+              <h5 class="card-title">Vehículos Registrados</h5>
+              <h2 class="card-number">{{ vehiculosRegistrados }}</h2>
+              <a routerLink="vehículo" class="btn btn-acento">Ver Detalles</a>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card tarjeta">
+            <div class="card-body text-center">
+              <h5 class="card-title">Reservas Realizadas</h5>
+              <h2 class="card-number">{{ reservasRealizadas }}</h2>
+              <a routerLink="hReserva" class="btn btn-acento">Ver Detalles</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+>>>>>>> 4c275d17e4a5f42c82a97a122893ec1549941fc1

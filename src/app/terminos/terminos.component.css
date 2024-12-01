@@ -46,6 +46,7 @@ h3 {
 
 /* Hero Section */
 .hero {
+<<<<<<< HEAD
   position: relative;
   text-align: center;
   background: url('/public/logo_matik_autorent.png') no-repeat center center/cover;
@@ -154,3 +155,28 @@ h3 {
     font-size: 1rem;
   }
 }
+
+    background-image: url('https://via.placeholder.com/2000x600');
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Altura de la sección */
+  }
+  
+
+  h2 {
+    color: #FF7043;
+  }
+
+  h1 {
+    color: #0077A7;
+  }
+
+  div {
+    font-family: Arial, sans-serif;
+  }
+
+  div #tc {
+    line-height: 1.6; 
+    margin: 40px;
+  }
+>>>>>>> 4c275d17e4a5f42c82a97a122893ec1549941fc1
