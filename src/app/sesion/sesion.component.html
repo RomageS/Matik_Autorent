@@ -17,7 +17,7 @@
     class="btn btn-sm text-white" 
     *ngIf="isAdmin()" 
     (click)="goToAdminPanel()">
-    Panel de Administración
+    Administración
   </button>
 
   <!-- Botón para usuario normal -->
@@ -25,7 +25,7 @@
     class="btn btn-sm text-white" 
     *ngIf="isUser()" 
     (click)="goToUserProfile()">
-    Perfil de Usuario
+    Perfil
   </button>
 
   <!-- Botón para cerrar sesión -->
@@ -66,7 +66,7 @@
       </div>
     </form>
   </div>
-  <div class="modal-footer">
+  <div class="modal-footer bg-dark">
     <button 
       type="button" 
       class="btn text-white" 

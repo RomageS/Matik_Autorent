@@ -19,12 +19,13 @@ import { TerminosComponent } from './terminos/terminos.component';
 import { PrivacidadComponent } from './privacidad/privacidad.component';
 import { ApiService } from './servicios/api.service';
 
-import { registerLocaleData } from '@angular/common';
-import localeEs from '@angular/common/locales/es';
 import { PerfilComponent } from './perfil/perfil.component';
+import { UsuarioComponent } from './usuario/usuario.component';
+import { FooterComponent } from './footer/footer.component';
+import { VehiculoComponent } from './vehiculo/vehiculo.component';
+import { HReservasComponent } from './h-reservas/h-reservas.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
-
-registerLocaleData(localeEs, 'es');
 
 @NgModule({
   declarations: [
@@ -40,7 +41,12 @@ registerLocaleData(localeEs, 'es');
     TerminosComponent,
     PrivacidadComponent,
     ReservasComponent,
-    PerfilComponent
+    PerfilComponent,
+    UsuarioComponent,
+    FooterComponent,
+    VehiculoComponent,
+    HReservasComponent,
+    DashboardComponent
   ],
   
   imports: [

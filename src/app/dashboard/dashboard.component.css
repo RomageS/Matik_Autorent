@@ -1,70 +1,44 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-}
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-}
-header {
-    background: #800000; /* Color rojo burdeos */
-    color: #fff;
-    padding-top: 30px;
-    min-height: 70px;
-    border-bottom: #004445 3px solid;
-}
-header a {
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 16px;
-}
-header ul {
-    padding: 0;
-    list-style: none;
-}
-header li {
-    display: inline;
-    padding: 0 20px 0 20px;
-}
-.button {
-    height: 38px;
-    background: #004445;
-    color: #fff;
-    border: 0;
-    padding-left: 20px;
-    padding-right: 20px;
-    cursor: pointer;
-}
-.button:hover {
-    background: #027575;
-}
-.main h1 {
-    color: #800000;
-}
-.table-container {
-    margin: 20px 0;
-    overflow: auto;
-}
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-th, td {
-    padding: 12px;
-    border: 1px solid #ddd;
-    text-align: left;
-}
-th {
-    background-color: #800000;
+/* Estilo general del dashboard */
+.dashboard-container {
+    background-color: #FFFFFF; /* Fondo blanco */
+    height: 100vh;
+  }
+  
+  .header {
+    background-color: #0077A7; /* Azul primario */
     color: white;
-}
-.animate {
-    animation: fadeIn 2s;
-}
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
+    font-size: 1.5rem;
+  }
+  
+  .card {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+  }
+  
+  .tarjeta {
+    background-color: #FFFFFF; /* Fondo blanco */
+  }
+  
+  .card-title {
+    color: #0077A7; /* Azul primario */
+    font-weight: bold;
+  }
+  
+  .card-number {
+    font-size: 2.5rem;
+    color: #FF7043; /* Coral */
+  }
+  
+  .btn-acento {
+    background-color: #FF7043; /* Coral */
+    color: white;
+    font-weight: bold;
+    border: none;
+  }
+  
+  .btn-acento:hover {
+    background-color: #FF8A65; /* Coral más claro */
+    color: white;
+  }

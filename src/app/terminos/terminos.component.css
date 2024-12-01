@@ -1,7 +1,24 @@
 .hero {
-    background-image: url('https://via.placeholder.com/2000x600'); /* Cambia 'imagen.jpg' por la ruta de tu imagen */
+    background-image: url('https://via.placeholder.com/2000x600');
     background-size: cover;
     background-position: center;
     height: 100vh; /* Altura de la sección */
   }
   
+
+  h2 {
+    color: #FF7043;
+  }
+
+  h1 {
+    color: #0077A7;
+  }
+
+  div {
+    font-family: Arial, sans-serif;
+  }
+
+  div #tc {
+    line-height: 1.6; 
+    margin: 40px;
+  }
