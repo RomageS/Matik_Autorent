@@ -29,6 +29,7 @@ import { HReservasComponent } from './h-reservas/h-reservas.component';
 
 import { PerfilComponent } from './perfil/perfil.component';
 import { UsuarioComponent } from './usuario/usuario.component';
+import { PagoComponent } from './pago/pago.component';
 
 
 
@@ -62,6 +63,7 @@ const routes: Routes = [
   {path: 'dashboard/vehiculo', component:VehiculoComponent},
   {path: 'dashboard/hReserva', component:HReservasComponent},
   {path: 'perfil', component:PerfilComponent},
+  {path: 'pago', component:PagoComponent},
   {path: '**', redirectTo: '', pathMatch: 'full'},
   
 ];

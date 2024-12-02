@@ -28,6 +28,8 @@ export class SesionComponent {
         // Guarda el estado de sesión y el rol del usuario en localStorage
       localStorage.setItem('isLoggedIn', 'true');
       localStorage.setItem('userRole', response.role); // Guarda el rol del usuario
+      localStorage.setItem('userId', response.id); // Guarda el ID del usuario
+      console.log(localStorage.getItem('userId'));
 
         this.modalService.dismissAll(); // Cierra el modal
         console.log('Modal cerrado con dismissAll');
@@ -53,6 +55,8 @@ export class SesionComponent {
 
   logout() {
     localStorage.removeItem('isLoggedIn'); // Limpia el estado de sesión
+    localStorage.removeItem('userRole'); // Limpia el rol del usuario
+    localStorage.removeItem('userId'); // Limpia el ID del usuario
     this.router.navigate(['']); // Redirige al inicio o página principal
     console.log('Sesión cerrada');
   }

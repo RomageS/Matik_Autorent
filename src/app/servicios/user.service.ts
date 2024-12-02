@@ -41,4 +41,8 @@ export class UserService {
     const payload = { email, password };
     return this.http.post<any>(`${this.apiUrl}/login`, payload);
   }
+
+  getUserReservations(userId: number): Observable<any[]> {
+    return this.http.get<any[]>(`http://localhost:8080/users/${userId}/reservations`);
+  }
 }
