@@ -1,52 +1,58 @@
 <body>
-<div class="container-fluid d-flex justify-content-center align-items-center">
-  <div class="row w-100 justify-content-center">
-    <!-- Formulario -->
-    <div class="col-9 col-sm-8 col-md-7 col-lg-6 bg-white shadow rounded p-4">
-      <h3 class="mb-4 text-center text-danger">REGÍSTRATE</h3>
-
-      <form>
-        <div class="form-group mb-3">
-          <label for="name" class="text-danger">Nombre</label>
-          <input type="text" class="form-control border-danger" id="name" placeholder="Introduce tu nombre" required>
-        </div>
-
-        <div class="form-group mb-3">
-          <label for="surname" class="text-danger">Apellido</label>
-          <input type="text" class="form-control border-danger" id="surname" placeholder="Introduce tu apellido" required>
-        </div>
-        
-        <div class="form-group mb-3">
-          <label for="email" class="text-danger">Correo electrónico</label>
-          <input type="email" class="form-control border-danger" id="email" placeholder="Introduce tu correo electrónico" required>
-        </div>
-        
-        <div class="form-group mb-3">
-          <label for="password" class="text-danger">Contraseña</label>
-          <input type="password" class="form-control border-danger" id="password" placeholder="Introduce tu contraseña" required>
-        </div>
-        
-        <div class="form-group mb-4">
-          <label for="confirm-password" class="text-danger">Confirmar contraseña</label>
-          <input type="password" class="form-control border-danger" id="confirm-password" placeholder="Confirmar contraseña" required>
-        </div>
-        
-        <button type="submit" class="btn btn-danger w-100 rounded-pill">CREAR CUENTA</button>
-
-        <p class="mt-3 text-center text-muted">
-          Al hacer clic en CREAR CUENTA, estás de acuerdo con el 
-          <a routerLink="privacidad" class="text-danger">aviso de privacidad</a> y los 
-          <a routerLink="terminos" class="text-danger">Términos y Condiciones</a>.
-        </p>
-
-        <p class="mt-2 text-center">
-          ¿Ya tienes cuenta? 
-          <a class="text-primary btn-sesion"><app-sesion></app-sesion></a>
-        </p>
-      </form>
+  <div class="container-fluid d-flex justify-content-center align-items-center">
+    <div class="row w-100 justify-content-center">
+      <!-- Formulario -->
+      <div class="col-9 col-sm-8 col-md-7 col-lg-6 bg-white shadow rounded p-4">
+        <h3 class="mb-4 text-center text-danger">REGÍSTRATE</h3>
+  
+        <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+          <div class="form-group mb-3">
+            <label for="name" class="text-primary">Nombre</label>
+            <input type="text" class="form-control border-danger" formControlName="name" id="name"  required>
+          </div>
+  
+          <div class="form-group mb-3">
+            <label for="surname" class="text-primary">Apellido</label>
+            <input type="text" class="form-control border-danger" formControlName="surname" id="surname"  required>
+          </div>
+          
+          <div class="form-group mb-3">
+            <label for="email" class="text-primary">Correo electrónico</label>
+            <input type="email" class="form-control border-danger" formControlName="email" id="email"  required>
+          </div>
+          
+          <div class="form-group mb-3">
+            <label for="password" class="text-primary">Contraseña</label>
+            <input type="password" class="form-control border-danger" formControlName="password" id="password"  required>
+          </div>
+          
+          <div class="form-group mb-4">
+            <label for="confirm-password" class="text-primary">Confirmar contraseña</label>
+            <input type="password" class="form-control border-danger" formControlName="confirmPassword" id="confirm-password" required>
+            <div *ngIf="registroForm.get('confirmPassword')?.hasError('passwordMismatch') && registroForm.get('confirmPassword')?.touched" class="text-danger">
+              Las contraseñas no coinciden.
+            </div>
+          </div>
+          
+          <button type="submit" class="btn btn-sesion w-100 text-white rounded-pill" [disabled]="registroForm.invalid">CREAR CUENTA</button>
+  
+          <p *ngIf="mensajeError" class="text-primary text-center">{{ mensajeError }}</p>
+  
+          <p class="mt-3 text-center text-muted">
+            Al hacer clic en CREAR CUENTA, estás de acuerdo con el 
+            <a routerLink="privacidad" class="text-danger">aviso de privacidad</a> y los 
+            <a routerLink="terminos" class="text-danger">Términos y Condiciones</a>.
+          </p>
+  
+          <p class="mt-2 text-center">
+            ¿Ya tienes cuenta? 
+            <a class="text-primary btn-sesion"><app-sesion></app-sesion></a>
+          </p>
+        </form>
+      </div>
     </div>
   </div>
-</div>
+  
 </body>
   
   

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../servicios/api.service';
+import { VehicleService } from '../servicios/vehicle.service';
 
 @Component({
   selector: 'app-flota',
@@ -7,11 +7,11 @@ import { ApiService } from '../servicios/api.service';
   styleUrl: './flota.component.css'
 })
 export class FlotaComponent {
- constructor(private service: ApiService) {
+ constructor(private service: VehicleService) {
   
  }
 ngOnInit():void {
-this.service.obtenerDatos().subscribe((data) => {
+this.service.getAllVehiculos().subscribe((data) => {
 this.cars = data;
 
 
@@ -25,15 +25,15 @@ this.cars = data;
 
   cars = [
     {
-      color: '',
       brand:'',
       model: 'Chevrolet Beat 5P',
-      category: 'Economy Car',
-      passengers: 5,
-      luggage: '2 Maletas',
-      transmission: 'Estándar',
-      doors: 5,
-      ac: true,
+      year: '',
+      color: '',
+      transmission: '',
+      price_day: 0 ,
+      mileage: '',
+      status: '',
+      ac: 'si',
       image: 'https://via.placeholder.com/300x200'
     }
   ];

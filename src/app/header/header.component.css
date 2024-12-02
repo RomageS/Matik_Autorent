@@ -11,7 +11,7 @@
   }
 
   .navbar-custom {
-    background-color: #8B0000; /* Color rojo oscuro */
+    background-color: #2980b9; /* Color rojo oscuro */
     padding: 5px 30px;
     position: sticky;
   top: 0;
@@ -32,6 +32,17 @@
     text-decoration-line: none;
 }
 
+.search {
+  transition: background-color 0.3s, color 0.3s;
+  padding: 5px 20px; 
+  border-radius: 50px;
+}
+
+.search:hover {
+  background-color: #f0f0f0;
+    color: black !important; 
+}
+
 button:hover a {
     background-color: #f0f0f0;
     color: black !important; 
@@ -50,10 +61,12 @@ button:hover a {
       .navbar-nav .nav-link:hover {
         background-color: #f0f0f0;
         color: black !important;  
-        
       }
 
       .navbar-toggler {
         background-color: #f0f0f0;
       }
 
+app-sesion.navbar.collapse{
+  padding-top: 20px;
+}

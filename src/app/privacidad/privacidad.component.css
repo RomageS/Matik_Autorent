@@ -5,3 +5,20 @@
     height: 100vh; /* Altura de la sección */
   }
   
+  
+  h2 {
+    color: #FF7043;
+  }
+
+  h1 #ap {
+    color: #0077A7;
+  }
+
+  div {
+    font-family: Arial, sans-serif;
+  }
+
+  div #ap {
+    line-height: 1.6; 
+    margin: 40px;
+  }

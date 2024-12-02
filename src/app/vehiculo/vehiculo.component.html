@@ -1,0 +1,50 @@
+<div class="vehiculos-container">
+    <h1 class="titulo">Gestión de Vehículos</h1>
+  
+    <!-- Tabla de vehículos -->
+    <table class="tabla">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Modelo</th>
+          <th>Marca</th>
+          <th>Año</th>
+          <th>Color</th>
+          <th>Millaje</th>
+          <th>Precio Dia</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vehiculo of vehiculos">
+          <td>{{ vehiculo.id }}</td>
+          <td>{{ vehiculo.model }}</td>
+          <td>{{ vehiculo.brand }}</td>
+          <td>{{ vehiculo.year }}</td>
+          <td>{{ vehiculo.color }}</td>
+          <td>{{ vehiculo.mileage + " Mi" }}</td>
+          <td>{{ vehiculo.price_day | currency }}</td>
+          <td>{{ vehiculo.status }}</td>
+          <td>
+            <button class="btn-editar" (click)="editarVehiculo(vehiculo)">Editar</button>
+            <button class="btn-eliminar" (click)="eliminarVehiculo(vehiculo.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Formulario de vehículo -->
+    <form class="formulario" (ngSubmit)="guardarVehiculo()">
+      <input type="text" [(ngModel)]="vehiculoSeleccionado.modelo" placeholder="Modelo" name="modelo" required />
+      <input type="text" [(ngModel)]="vehiculoSeleccionado.marca" placeholder="Marca" name="marca" required />
+      <input type="text" [(ngModel)]="vehiculoSeleccionado.placa" placeholder="Placa" name="placa" required />
+      <select [(ngModel)]="vehiculoSeleccionado.estado" name="estado">
+        <option value="Disponible">Disponible</option>
+        <option value="En Renta">En Renta</option>
+        <option value="En Mantenimiento">En Mantenimiento</option>
+      </select>
+      <button type="submit">{{ vehiculoSeleccionado.id ? 'Actualizar' : 'Agregar' }}</button>
+    </form>
+  </div>
+  

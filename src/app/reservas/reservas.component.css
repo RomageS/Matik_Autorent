@@ -1,23 +1,80 @@
+/* Tarjetas */
 .card {
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  border: 2px solid #0077a7;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(255, 0, 0, 0.3); /* Sombra roja */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 10px 20px rgba(255, 0, 0, 0.5); /* Sombra roja al pasar el cursor */
+}
+
+.card-img-top {
+  border-radius: 10px 10px 0 0;
+  height: 150px;
+  object-fit: contain;
+}
+
+.card-title {
+  font-size: 0.9rem;
+  color: #0077a7;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 0.8rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.btn-primary {
+  background-color: #0077a7;
+  color: #fff;
+  border: none;
+  font-size: 0.75rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #005f87;
+  transform: translateY(-2px);
+}
+
+/* Responsividad */
+.row.g-3 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.col-6.col-sm-4 {
+  flex: 0 0 calc(50% - 15px);
+}
+
+@media screen and (max-width: 768px) {
+  .col-6.col-sm-4 {
+    flex: 0 0 100%;
   }
+}
+.form-reservas {
+  background-color: #005f87;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(255, 0, 0, 0.3); /* Sombra roja */
+  padding: 30px;
+  margin-bottom: 30px;
+  position: sticky; /* Hacer que el formulario sea "pegajoso" */
+  top: 20px; /* Distancia desde la parte superior cuando se pega */
+  z-index: 1000; /* Asegurar que quede por encima de otros elementos */
+}
+
+.form-reservas .btn{
+  background-color: #ff5733;
   
-  .btn-warning {
-    background-color: #ffcc00;
-    border: none;
-  }
-  
-  .btn-warning:hover {
-    background-color: #f1b800;
-  }
-  
-  .form-control,
-  .form-select {
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  .text-warning:hover {
-    text-decoration: underline;
-  }
-  
+}

@@ -22,6 +22,16 @@ import { SesionEnglishComponent } from './sesionenglish/sesion-english.component
 import { TerminosEnglishComponent } from './terminosenglish/terminos-english.component';
 import { UbicacionEnglishComponent } from './ubicacionenglish/ubicacion-english.component';
 
+import { DashboardComponent } from './dashboard/dashboard.component';
+
+import { VehiculoComponent } from './vehiculo/vehiculo.component';
+import { HReservasComponent } from './h-reservas/h-reservas.component';
+
+import { PerfilComponent } from './perfil/perfil.component';
+import { UsuarioComponent } from './usuario/usuario.component';
+
+
+
 const routes: Routes = [
   {path: '',component: HomeComponent},
   {path: 'flota', component: FlotaComponent},
@@ -33,6 +43,7 @@ const routes: Routes = [
   {path: 'registro/privacidad', component: PrivacidadComponent},
   {path: 'terminos', component:TerminosComponent},
   {path: 'registro/terminos', component:TerminosComponent},
+
   {path: "home-english", component:HomeEnglishComponent},
   {path: "ayuda-english", component:AyudaEnglishComponent},
   {path: "dashboard-english", component:DashboardEnglishComponent},
@@ -45,6 +56,12 @@ const routes: Routes = [
   {path: "sesion-english", component:SesionEnglishComponent},
   {path: "terminos-english", component:TerminosEnglishComponent},
   {path: "ubicacion-englishi*", component:UbicacionEnglishComponent},
+
+  {path: 'dashboard', component:DashboardComponent},
+  {path: 'dashboard/usuario', component:UsuarioComponent},
+  {path: 'dashboard/vehiculo', component:VehiculoComponent},
+  {path: 'dashboard/hReserva', component:HReservasComponent},
+  {path: 'perfil', component:PerfilComponent},
   {path: '**', redirectTo: '', pathMatch: 'full'},
   
 ];

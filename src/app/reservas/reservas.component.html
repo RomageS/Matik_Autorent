@@ -1,62 +1,70 @@
 <div class="container py-4">
-    <div class="card p-4" style="background-color: #005bac; color: white; border-radius: 10px;">
-      <div class="row">
-        <div class="col-12">
-          <h2 class="text-white">Realizar una reserva</h2>
-          <p class="text-white-50">*Indica campo requerido</p>
-          <a href="#" class="text-warning float-end" style="font-size: 14px;">Ver/Cancelar reservación</a>
+    <div class="row">
+      <!-- Columna del Formulario de Reservas -->
+      <div class="col-md-6">
+        <div class="card p-4 form-reservas">
+          <h2 class="text-center mb-4">Hacer una Reserva</h2>
+          <form (ngSubmit)="realizarReserva()">
+            <div class="mb-3">
+              <label for="fechaEntrega" class="form-label">Fecha de Entrega*</label>
+              <input
+                type="date"
+                id="fechaEntrega"
+                class="form-control"
+                [(ngModel)]="reserva.fechaEntrega"
+                name="fechaEntrega"
+                [min]="minDate"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="fechaRegreso" class="form-label">Fecha de Regreso*</label>
+              <input
+                type="date"
+                id="fechaRegreso"
+                class="form-control"
+                [(ngModel)]="reserva.fechaRegreso"
+                name="fechaRegreso"
+                [min]="reserva.fechaEntrega || minDate"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="vehiculo" class="form-label">Vehículo Seleccionado</label>
+              <input
+                type="text"
+                id="vehiculo"
+                class="form-control"
+                [value]="vehiculoSeleccionado?.modelo || 'Seleccione un vehículo'"
+                disabled
+              />
+            </div>
+            <button type="submit" class="btn w-100">Confirmar Reserva</button>
+          </form>
         </div>
       </div>
-      <div class="row mt-3">
-        <div class="col-md-6 mb-3">
-          <label class="form-label">Fecha de entrega*</label>
-          <input type="date" class="form-control">
-        </div>
-        <div class="col-md-6 mb-3">
-          <label class="form-label">Hora*</label>
-          <select class="form-select">
-            <option selected disabled>Selecciona una hora</option>
-            <option>08:00 AM</option>
-            <option>12:00 PM</option>
-            <option>06:00 PM</option>
-          </select>
-        </div>
-        <div class="col-md-6 mb-3">
-          <label class="form-label">Fecha de regreso*</label>
-          <input type="date" class="form-control">
-        </div>
-        <div class="col-md-6 mb-3">
-          <label class="form-label">Hora*</label>
-          <select class="form-select">
-            <option selected disabled>Selecciona una hora</option>
-            <option>08:00 AM</option>
-            <option>12:00 PM</option>
-            <option>06:00 PM</option>
-          </select>
-        </div>
-        <div class="col-md-6 mb-3">
-          <label class="form-label">Código de descuento</label>
-          <input type="text" class="form-control" placeholder="Ingresa tu código">
-        </div>
-        <div class="col-md-6 mb-3">
-          <label class="form-label">Edad*</label>
-          <select class="form-select">
-            <option>18+</option>
-            <option>25+</option>
-            <option>35+</option>
-          </select>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <button class="btn btn-warning text-dark w-100">Buscar</button>
-        </div>
-      </div>
-      <div class="row mt-3">
-        <div class="col-md-12 text-center">
-          <p class="text-white">
-            Consulta nuestras opciones de <a href="#" class="text-warning text-decoration-none">empresas</a>
-          </p>
+  
+      <!-- Columna de Vehículos Disponibles -->
+      <div class="col-md-6">
+        <h2 class="text-center text-success mb-4">Vehículos Disponibles</h2>
+        <div class="row g-3">
+          <div class="col-6 col-sm-4" *ngFor="let vehiculo of vehiculos">
+            <div class="card">
+              <img [src]="vehiculo.image" class="card-img-top" alt="{{ vehiculo.image }}" />
+              <div class="card-body text-center">
+                <h6 class="card-title text-truncate">{{ vehiculo.modelo }}</h6>
+                <p class="card-text small">
+                  <strong>Marca:</strong> {{ vehiculo.marca }}
+                </p>
+                <button
+                  class="btn btn-primary btn-sm w-100"
+                  (click)="seleccionarVehiculo(vehiculo)"
+                >
+                  Seleccionar
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
