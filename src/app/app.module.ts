@@ -43,6 +43,7 @@ import { VehiculoComponent } from './vehiculo/vehiculo.component';
 import { HReservasComponent } from './h-reservas/h-reservas.component';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { PagoComponent } from './pago/pago.component';
 
 
 
@@ -77,7 +78,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     FooterComponent,
     VehiculoComponent,
     HReservasComponent,
-    DashboardComponent
+    DashboardComponent,
+    PagoComponent
   ],
   
   imports: [

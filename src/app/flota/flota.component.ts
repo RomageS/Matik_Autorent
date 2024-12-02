@@ -1,39 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { VehicleService } from '../servicios/vehicle.service';
+import { ReservaService } from '../servicios/reserva.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-flota',
   templateUrl: './flota.component.html',
-  styleUrl: './flota.component.css'
+  styleUrls: ['./flota.component.css']
 })
-export class FlotaComponent {
- constructor(private service: VehicleService) {
-  
- }
-ngOnInit():void {
-this.service.getAllVehiculos().subscribe((data) => {
-this.cars = data;
+export class FlotaComponent implements OnInit {
+  cars: any[] = []; // Lista de vehículos cargados desde el servicio
 
+  constructor(
+    private service: VehicleService,
+    private reservaService: ReservaService,
+    private router: Router
+  ) {}
 
+  ngOnInit(): void {
+    // Cargar los vehículos desde el servicio
+    this.service.getAllVehiculos().subscribe((data) => {
+      this.cars = data;
+    });
+  }
 
-
-
-});
-
-}
-
-  cars = [
-    {
-      brand:'',
-      model: 'Chevrolet Beat 5P',
-      year: '',
-      color: '',
-      transmission: '',
-      price_day: 0 ,
-      mileage: '',
-      status: '',
-      ac: 'si',
-      image: 'https://via.placeholder.com/300x200'
-    }
-  ];
+  // Método para manejar la acción de reservar
+  reservarAhora(car: any): void {
+    this.reservaService.setVehiculoSeleccionado(car); // Guarda el vehículo seleccionado en el servicio
+    this.router.navigate(['/reservas']); // Redirige a la página de reservas
+  }
 }

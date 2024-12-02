@@ -1,4 +1,3 @@
-
 <div>
   <div id="carouselExampleIndicators" class="carousel slide">
 
@@ -88,7 +87,7 @@
               Aire Acondicionado: Sí
             </p>
             <p class="price">$1500.00/día</p>
-            <button class="btn">Reservar Ahora</button>
+            <button class="btn" (click)="reservarAhora({brand: 'BMW', model:'Serie 3', year: 2022 })">Reservar Ahora</button>
           </div>
         </div>
       </div>
@@ -97,7 +96,7 @@
         <div class="car">
           <img src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2021/02/22/16139895839771.jpg" alt="Mercedes-Benz Clase C" class="img-fluid">
           <div class="car-info">
-            <h3>BMW</h3>
+            <h3>Mercedes-Benz</h3>
             <p class="card-text">
               Año: 2021 <br>
               Motor: 2.0L Turbo <br>
@@ -105,8 +104,8 @@
               Combustible: Gasolina <br>
               Aire Acondicionado: Sí
             </p>
-            <p class="price">$1500.00/día</p>
-            <button class="btn" (click)="reservarAhora({ id: 1, marca: 'BMW', modelo: 'Serie 3' })">Reservar Ahora</button>
+            <p class="price">$1600.00/día</p>
+            <button class="btn" (click)="reservarAhora({brand: 'Mercedez-Benz', model:'Clase C', year: 2021 })">Reservar Ahora</button>
           </div>
         </div>
       </div>
@@ -125,7 +124,7 @@
               Aire Acondicionado: Sí
             </p>
             <p class="price">$1550.00/día</p>
-            <button class="btn btn-danger">Reservar Ahora</button>
+            <button class="btn" (click)="reservarAhora({brand: 'Audi', model:'A4', year: 2020 })">Reservar Ahora</button>
           </div>
         </div>
       </div>
@@ -139,11 +138,11 @@
               Año: 2021 <br>
               Motor: 5.0L V8 <br>
               Transmisión: Manual <br>
-              Combustible: Gasolina <br>
+              Combustible: Electricidad <br>
               Aire Acondicionado: Sí
             </p>
             <p class="price">$1800.00/día</p>
-            <button class="btn btn-danger">Reservar Ahora</button>
+            <button class="btn" (click)="reservarAhora({brand: 'Tesla', model:'Model 3', year: 2022 })">Reservar Ahora</button>
           </div>
         </div>
       </div>

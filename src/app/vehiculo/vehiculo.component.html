@@ -38,7 +38,10 @@
     <form class="formulario" (ngSubmit)="guardarVehiculo()">
       <input type="text" [(ngModel)]="vehiculoSeleccionado.modelo" placeholder="Modelo" name="modelo" required />
       <input type="text" [(ngModel)]="vehiculoSeleccionado.marca" placeholder="Marca" name="marca" required />
-      <input type="text" [(ngModel)]="vehiculoSeleccionado.placa" placeholder="Placa" name="placa" required />
+      <input type="text" [(ngModel)]="vehiculoSeleccionado.year" placeholder="Año" name="Año" required />
+      <input type="text" [(ngModel)]="vehiculoSeleccionado.color" placeholder="Color" name="Color" required />
+      <input type="text" [(ngModel)]="vehiculoSeleccionado.mileage" placeholder="Millaje" name="Millaje" required />
+      <input type="text" [(ngModel)]="vehiculoSeleccionado.price_day" placeholder="Precio por dia" name="Precio por dia" required />
       <select [(ngModel)]="vehiculoSeleccionado.estado" name="estado">
         <option value="Disponible">Disponible</option>
         <option value="En Renta">En Renta</option>
