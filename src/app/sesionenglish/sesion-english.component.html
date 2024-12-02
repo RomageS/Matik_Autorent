@@ -1,0 +1,26 @@
+
+<!-- Botón que abre el modal -->
+<button type="button" class="btn text-white" (click)="openLoginModal(loginModal)">log in</button>
+
+<!-- Modal de inicio de sesión -->
+<ng-template #loginModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title text-white">log in</h4>
+  </div>
+  <div class="modal-body">
+    <form (submit)="onSubmit(); modal.close()">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email"  name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" class="form-control" id="password"  name="password" required>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" class="btn text-white" (click)="onSubmit()">sign in</button>
+    <button type="button" class="btn text-white" (click)="redirectToRegister(modal)"><a class="text-white" routerLink="registro">Register</a></button>
+  </div>
+</ng-template>

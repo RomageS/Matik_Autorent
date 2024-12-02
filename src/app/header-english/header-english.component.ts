@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
-import { SesionComponent } from '../sesion/sesion.component';
+import { SesionEnglishComponent } from '../sesionenglish/sesion-english.component';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  selector: 'app-header-english',
+  templateUrl: './header-english.component.html',
+  styleUrl: './header-english.component.css'
 })
-export class HeaderComponent {
+export class HeaderEnglishComponent {
   isLoggedIn: boolean = false; // Variable para verificar si el usuario está autenticado.
 
-  constructor() {}
+  constructor( ) {}
 
   // Simula el inicio y cierre de sesión para pruebas.
   login() {
