@@ -1,33 +1,29 @@
-<div class="reservas-container">
-  <h1 class="titulo">Gestión de Reservas</h1>
-
-  <!-- Tabla de reservas -->
-  <table class="tabla">
-    <thead>
-      <tr>
-        <th>ID Reserva</th>
-        <th>Usuario</th>
-        <th>Vehículo</th>
-        <th>Fecha Entrega</th>
-        <th>Fecha Regreso</th>
-        <th>Días</th>
-        <th>Total Pagado</th>
-        <th>Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let reserva of reservas">
-        <td>{{ reserva.id }}</td>
-        <td>{{ reserva.user.name }}</td>
-        <td>{{ reserva.vehicle.model }} - {{ reserva.vehicle.brand }}</td>
-        <td>{{ reserva.fechaEntrega }}</td>
-        <td>{{ reserva.fechaRegreso }}</td>
-        <td>{{ calcularDias(reserva.fechaEntrega, reserva.fechaRegreso) }}</td>
-        <td>{{ reserva.totalPagado | currency }}</td>
-        <td>
-          <button class="btn btn-danger btn-sm" (click)="cancelarReserva(reserva.id)">Cancelar</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<div class="hReserva-container">
+    <h1 class="titulo">Reservas Registradas</h1>
+    <table class="tabla">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Cliente</th>
+          <th>Vehículo</th>
+          <th>Fecha</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let reserva of reservas">
+          <td>{{ reserva.id }}</td>
+          <td>{{ reserva.cliente }}</td>
+          <td>{{ reserva.vehiculo }}</td>
+          <td>{{ reserva.fecha }}</td>
+          <td>{{ reserva.estado }}</td>
+          <td>
+            <button class="btn-editar" (click)="editarReserva(reserva)">Editar</button>
+            <button class="btn-eliminar" (click)="eliminarReserva(reserva.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

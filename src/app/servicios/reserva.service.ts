@@ -24,8 +24,6 @@ export class ReservaService {
     return this.http.get<any[]>(`${this.apiUrl}/reservations`);
   }
 
-  
-
   // Obtener una reserva por ID
   obtenerReservaPorId(id: number): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/${id}`);
@@ -49,14 +47,5 @@ export class ReservaService {
     return this.vehiculoSeleccionado;
   }
 
-  // Obtener todas las reservas
-  obtenerTodasLasReservas(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/all`);
-  }
-
-  // Cancelar una reserva
-  cancelarReserva(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`);
-  }
   
 }

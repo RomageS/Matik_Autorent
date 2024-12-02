@@ -28,16 +28,7 @@ reservas: any;
     return dias * precioPorDia;
   }
 
-  loadUserReservations(userId: number): void {
-    this.userService.getUserReservations(userId).subscribe({
-      next: (data) => {
-        this.reservas = data; // Asigna las reservas a la lista
-      },
-      error: (err) => {
-        console.error('Error al cargar las reservas del usuario:', err);
-      }
-    });
-  }
+  
 
   constructor(private userService: UserService, private route: ActivatedRoute) {}
 
@@ -50,7 +41,6 @@ reservas: any;
     if (userId) {
       this.userService.getUserById(Number(userId)).subscribe({
         next: (data) => {
-          console.log('Usuario cargado:', data); // Verifica los datos cargados
           this.user = data;
         },
         error: (err) => {
@@ -60,5 +50,6 @@ reservas: any;
     } else {
       console.error('No se encontró el ID del usuario en la URL');
     }
-  }
+  
+}
 }

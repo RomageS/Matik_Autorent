@@ -56,14 +56,9 @@ export class ReservasComponent implements OnInit {
   // Seleccionar un vehículo
   seleccionarVehiculo(vehiculo: any): void {
     this.vehiculoSeleccionado = vehiculo;
-    this.reserva.vehiculoId = vehiculo.id;
-    localStorage.setItem('vehicleId', vehiculo.id.toString()); // Asegura que se guarde el ID en localStorage
-    localStorage.setItem('vehicleId', vehiculo.id.toString()); 
-  
-    // Debug: Imprime el ID del vehículo seleccionado
-    console.log('Vehículo seleccionado:', vehiculo);
-    console.log('ID del vehículo guardado en localStorage:', vehiculo.id);
-    console.log('Precio por día del vehículo:', vehiculo.price_day);
+    this.reserva.vehiculoId = vehiculo.id; // Actualiza el ID del vehículo seleccionado
+    localStorage.setItem('vehicleId', vehiculo.id.toString()); // Guarda el ID en localStorage
+    console.log('Vehículo seleccionado:', this.vehiculoSeleccionado);
   }
 
   // Calcular la diferencia en días entre las fechas
@@ -75,55 +70,29 @@ export class ReservasComponent implements OnInit {
   }
 
   // Redirigir al componente de pago
-  // Redirigir al componente de pago
-realizarReserva(): void {
-  const userId = localStorage.getItem('userId');
-  const vehicleId = localStorage.getItem('vehicleId');
-  const vehiclePriceDay = localStorage.getItem('vehiclePriceDay'); // Recupera el precio por día
-
-  // Debug: Mostrar valores en consola antes de validar
-  console.log('Debug - Datos antes de enviar:');
-  console.log('userId:', userId);
-  console.log('vehicleId:', vehicleId);
-  console.log('reserva.fechaEntrega:', this.reserva.fechaEntrega);
-  console.log('reserva.fechaRegreso:', this.reserva.fechaRegreso);
-
-  // Validación
-  if (!userId || !vehicleId) {
-    alert('Por favor, selecciona un vehículo e inicia sesión antes de confirmar la reserva.');
-    return;
-  }
-
-  const vehiculoSeleccionado = this.vehiculos.find(v => v.id === parseInt(vehicleId, 10));
-  if (!vehiculoSeleccionado) {
-    alert('El vehículo seleccionado no es válido.');
-    return;
-  }
-
-  const dias = this.calcularDiasReserva();
-  const precioTotal = dias * vehiculoSeleccionado.price_day;
-
-  const reservaData = {
-    ...this.reserva,
-    userId: parseInt(userId, 10),
-    vehiculoId: parseInt(vehicleId, 10),
-    dias,
-    precioTotal,
-  };
-
-  // Debug: Mostrar los datos finales enviados al backend
-  console.log('Datos enviados al backend:', reservaData);
-
-  this.reservaService.crearReserva(reservaData).subscribe(
-    (response) => {
-      alert('Reserva realizada con éxito.');
-      localStorage.removeItem('vehicleId'); // Limpia el `vehicleId`
-      this.router.navigate(['/pago'], { state: { reserva: reservaData } }); // Navega al componente de pago con datos
-    },
-    (error) => {
-      console.error('Error al realizar la reserva:', error);
-      alert('Ocurrió un error al realizar la reserva. Intenta nuevamente.');
+  realizarReserva(): void {
+    const userId = localStorage.getItem('userId');
+    if (!userId || !this.reserva.vehiculoId || !this.reserva.fechaEntrega || !this.reserva.fechaRegreso) {
+      alert('Por favor, completa todos los campos antes de continuar.');
+      return;
     }
-  );
-}
+    console.log('Datos enviados:', this.reserva);
+  this.reservaService.crearReserva(this.reserva).subscribe(/*...*/);
+
+    const dias = this.calcularDiasReserva();
+    const total = dias * this.vehiculoSeleccionado.price_day; // Calcula el total
+
+    // Redirige al componente de pago con los datos necesarios
+    this.router.navigate(['/pago'], {
+      state: {
+        vehiculo: this.vehiculoSeleccionado,
+        dias: dias,
+        total: total,
+        fechas: {
+          entrega: this.reserva.fechaEntrega,
+          regreso: this.reserva.fechaRegreso
+        }
+      }
+    });
+  }
 }
