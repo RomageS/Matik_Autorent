@@ -3,24 +3,28 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'any'
 })
 export class ReservaService {
   private apiUrl = 'http://localhost:8080/reservations'; // URL base del controlador de reservas
 
   private vehiculoSeleccionado: any = null;
-  
+
   constructor(private http: HttpClient) {}
 
   // Crear una nueva reserva
   crearReserva(reserva: any): Observable<any> {
+    console.log('Llamada al backend con reserva:', reserva);
     return this.http.post<any>(this.apiUrl, reserva);
   }
 
   // Obtener todas las reservas
   obtenerReservas(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl);
+    console.log('Datos enviados al backend:'); // Depuración: Verifica los datos enviados
+    return this.http.get<any[]>(`${this.apiUrl}/reservations`);
   }
+
+  
 
   // Obtener una reserva por ID
   obtenerReservaPorId(id: number): Observable<any> {
@@ -44,4 +48,15 @@ export class ReservaService {
   getVehiculoSeleccionado(): any {
     return this.vehiculoSeleccionado;
   }
+
+  // Obtener todas las reservas
+  obtenerTodasLasReservas(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/all`);
+  }
+
+  // Cancelar una reserva
+  cancelarReserva(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
+  
 }

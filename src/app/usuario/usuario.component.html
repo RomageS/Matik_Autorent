@@ -14,8 +14,9 @@
       <tr *ngFor="let usuario of usuarios">
         <td>{{ usuario.id }}</td>
         <td>{{ usuario.name }}</td>
+        <td>{{ usuario.lastName }}</td>
         <td>{{ usuario.email }}</td>
-        <td>{{ usuario.telefono }}</td>
+        
         <td>
           <button class="btn-editar" (click)="editarUsuario(usuario)">Editar</button>
           <button class="btn-eliminar" (click)="eliminarUsuario(usuario.id)">Eliminar</button>
@@ -27,8 +28,8 @@
   <!-- Formulario para agregar/editar usuarios -->
   <form (ngSubmit)="guardarUsuario()">
     <input type="text" [(ngModel)]="usuarioSeleccionado.name" placeholder="Nombre" name="name" required />
-    <input type="text" [(ngModel)]="usuarioSeleccionado.email" placeholder="Correo" name="email" required />
-    <input type="text" [(ngModel)]="usuarioSeleccionado.telefono" placeholder="Teléfono" name="telefono" />
+    <input type="text" [(ngModel)]="usuarioSeleccionado.email" placeholder="Apellido" name="Apellido" required />
+    <input type="text" [(ngModel)]="usuarioSeleccionado.telefono" placeholder="Correo" name="email" />
     <button type="submit">{{ usuarioSeleccionado.id ? 'Actualizar' : 'Agregar' }}</button>
   </form>
 </div>

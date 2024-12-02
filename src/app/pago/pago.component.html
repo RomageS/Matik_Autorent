@@ -1,0 +1,14 @@
+<div class="pago-container">
+    <h1>Resumen de la Reserva</h1>
+    <div *ngIf="reserva">
+      <p><strong>Vehículo ID:</strong> {{ reserva.vehiculoId }}</p>
+      <p><strong>Usuario ID:</strong> {{ reserva.userId }}</p>
+      <p><strong>Fecha de Entrega:</strong> {{ reserva.fechaEntrega }}</p>
+      <p><strong>Fecha de Regreso:</strong> {{ reserva.fechaRegreso }}</p>
+      <p><strong>Días:</strong> {{ reserva.dias }}</p>
+      <p><strong>Precio por Día:</strong> {{ reserva.precioTotal / reserva.dias | currency }}</p>
+      <p><strong>Precio Total:</strong> {{ reserva.precioTotal | currency }}</p>
+    </div>
+    <button (click)="confirmarPago()">Confirmar Pago</button>
+  </div>
+  
