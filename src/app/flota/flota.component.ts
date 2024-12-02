@@ -15,8 +15,7 @@ this.service.getAllVehiculos().subscribe((data) => {
 this.cars = data;
 
 
-//Para hacer prueba
-//alert(this.cars[1].brand);
+
 
 
 });

@@ -32,6 +32,12 @@ h3 {
   font-size: 1.8rem;
 }
 
+li{
+  color: #111111;
+}
+
+
+
 /* Contenedor Principal de la Página */
 .container-wrapper {
   display: flex;
@@ -199,6 +205,10 @@ h3 {
   text-align: center; /* Centrar los textos en esta sección */
 }
 
+.featured-cars .img-fluid{
+object-fit: fill;
+}
+
 .featured-cars h2 {
   color: #201111;
   font-size: 2.2rem;
@@ -351,4 +361,32 @@ h3 {
   to {
     opacity: 1;
   }
+}
+
+.card-text {
+  font-family: 'Roboto', sans-serif; /* Fuente moderna y limpia */
+  font-size: 15px; /* Tamaño de texto ajustado */
+  line-height: 1.8; /* Espaciado entre líneas */
+  color: #1a1a1a; /* Color base oscuro para el texto */
+  background: #f0f8ff; /* Fondo azul muy claro */
+  padding: 15px; /* Espaciado interno */
+  border-radius: 8px; /* Bordes redondeados */
+  border-left: 4px solid #007bff; /* Línea decorativa en el borde */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+.card-text strong {
+  color: #0056b3; /* Color azul más oscuro para etiquetas */
+  font-weight: 500; /* Peso intermedio para las etiquetas */
+}
+
+.card-text span {
+  color: #333; /* Color neutro para el contenido */
+}
+
+/* Efecto al pasar el mouse */
+.card-text:hover {
+  background: #e6f2ff; /* Fondo azul ligeramente más oscuro */
+  border-left-color: #0056b3; /* Intensifica la línea azul al pasar el mouse */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Sombra más fuerte */
 }

@@ -28,6 +28,14 @@ export class ReservasComponent implements OnInit {
     this.minDate = today.toISOString().split('T')[0]; // Fecha mínima es hoy
 
     this.cargarVehiculos(); // Cargar lista de vehículos disponibles
+
+    // Obtén el vehículo seleccionado desde el servicio
+    const vehiculo = this.reservaService.getVehiculoSeleccionado();
+    if (vehiculo) {
+      this.vehiculoSeleccionado = vehiculo;
+      this.reserva.vehiculoId = vehiculo.id; // Asocia el ID del vehículo a la reserva
+    }
+
   }
 
   // Cargar los vehículos disponibles
@@ -43,11 +51,12 @@ export class ReservasComponent implements OnInit {
   }
 
   // Seleccionar un vehículo
-  seleccionarVehiculo(vehiculo: any): void {
-    this.vehiculoSeleccionado = vehiculo;
-    this.reserva.vehiculoId = vehiculo.id; // Asocia el ID del vehículo con la reserva
-    alert(`Has seleccionado el vehículo: ${vehiculo.modelo}`);
-  }
+seleccionarVehiculo(vehiculo: any): void {
+  this.vehiculoSeleccionado = vehiculo;
+  this.reserva.vehiculoId = vehiculo.id; // Asocia el ID del vehículo con la reserva
+}
+
+
 
   // Realizar la reserva
   realizarReserva(): void {

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ApiService } from '../servicios/api.service';
+import { VehicleService } from '../servicios/vehicle.service';
 
 @Component({
   selector: 'app-flota-english',
@@ -7,16 +7,15 @@ import { ApiService } from '../servicios/api.service';
   styleUrl: './flota-english.component.css'
 })
 export class FlotaEnglishComponent {
-  constructor(private service: ApiService) {
+  constructor(private service: VehicleService) {
   
   }
- ngOnInit():void {
- this.service.obtenerDatos().subscribe((data) => {
- this.cars = data;
+  ngOnInit():void {
+    this.service.getAllVehiculos().subscribe((data) => {
+    this.cars = data;
  
  
- //Para hacer prueba
- //alert(this.cars[1].brand);
+
  
  
  });

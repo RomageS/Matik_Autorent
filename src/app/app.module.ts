@@ -66,7 +66,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     RegistroEnglishComponent,
     ReservarEnglishComponent,
     SesionEnglishComponent,
-    HeaderEnglishComponent
+    HeaderEnglishComponent,
 
     PrivacidadComponent,
     ReservasComponent,

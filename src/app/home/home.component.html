@@ -37,36 +37,36 @@
       <h3>¿Por qué elegirnos?</h3>
 
       <ul>
-        <li>&#x2713; Facilidad y rapidez: Reserva en línea simple y segura.</li>
-        <li>&#x2713; Flexibilidad: Alquiler por horas, días o semanas, sin contratos largos.</li>
-        <li>&#x2713; Variedad: Vehículos económicos y camionetas para cada necesidad.</li>
-        <li>&#x2713; Ubicación: Dirección exacta y horarios de atención claros.</li>
-        <li>&#x2713; Seguridad: Vehículos en óptimas condiciones con seguro incluido.</li>
+        <li><strong>Facilidad y rapidez:</strong> Reserva en línea simple y segura.</li>
+        <li><strong>Flexibilidad:</strong> Alquiler por horas, días o semanas, sin contratos largos.</li>
+        <li><strong>Variedad:</strong> Vehículos económicos y camionetas para cada necesidad.</li>
+        <li><strong>Ubicación:</strong> Dirección exacta y horarios de atención claros.</li>
+        <li><strong>Seguridad:</strong> Vehículos en óptimas condiciones con seguro incluido.</li>
       </ul>
+      
 
     </div>
 
     <div class="container text-center" id="cont">
       <h3>Nuestros Servicios</h3>
-
       <ul>
-        <li>&#x2713; Renta por horas: Ideal para traslados cortos o eventos especiales.</li>
-        <li>&#x2713; Renta por días: Perfecto para viajes cortos o fines de semana.</li>
-        <li>&#x2713; Renta por semanas: Opción económica para estancias más largas.</li>
-        <li>&#x2713; Extras: Ofrece servicios adicionales como GPS, sillas de bebé, etc.</li>
-        <li>&#x2713; Devolución: Explica el proceso de devolución y las condiciones.</li>
+        <li><strong>Renta por horas:</strong> Ideal para traslados cortos o eventos especiales.</li>
+        <li><strong>Renta por días:</strong> Perfecto para viajes cortos o fines de semana.</li>
+        <li><strong>Renta por semanas:</strong> Opción económica para estancias más largas.</li>
+        <li><strong>Extras:</strong> Ofrece servicios adicionales como GPS, sillas de bebé, etc.</li>
+        <li><strong>Devolución:</strong> Explica el proceso de devolución y las condiciones.</li>
       </ul>
+      
 
     </div>
 
     <div class="container text-center" id="cont">
       <h3>Flota de Vehículos</h3>
-
       <ul>
-        <li>&#x2713; Galería de imágenes: Muestra fotos de alta calidad de cada vehículo, incluyendo detalles como el interior, el exterior y las características principales.</li>
-        <li>&#x2713; Especificaciones técnicas: Indica el modelo, año, kilometraje, tipo de combustible, capacidad de pasajeros, etc.</li>
-        <li>&#x2713; Precios: Muestra una tabla comparativa con los precios de cada vehículo y los diferentes planes de alquiler.</li>
-      </ul>
+        <li><strong>Galería de imágenes:</strong> Muestra fotos de alta calidad de cada vehículo, incluyendo detalles como el interior, el exterior y las características principales.</li>
+        <li><strong>Especificaciones técnicas:</strong> Indica el modelo, año, kilometraje, tipo de combustible, capacidad de pasajeros, etc.</li>
+        <li><strong>Precios:</strong> Muestra una tabla comparativa con los precios de cada vehículo y los diferentes planes de alquiler.</li>
+      </ul>      
     </div>
   </div>
 
@@ -80,9 +80,15 @@
           <img src="https://www.bmw.com.mx/content/dam/bmw/common/all-models/3-series/sedan/2022/highlights/bmw-3-series-sedan-sp-desktop.jpg" alt="BMW Serie 3" class="img-fluid">
           <div class="car-info">
             <h3>BMW</h3>
-            <p>SERIE 3</p>
+            <p class="card-text">
+              Año: 2021 <br>
+              Motor: 2.0L Turbo <br>
+              Transmisión: Automática <br>
+              Combustible: Gasolina <br>
+              Aire Acondicionado: Sí
+            </p>
             <p class="price">$1500.00/día</p>
-            <button class="btn btn-danger">Reservar Ahora</button>
+            <button class="btn">Reservar Ahora</button>
           </div>
         </div>
       </div>
@@ -91,10 +97,16 @@
         <div class="car">
           <img src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2021/02/22/16139895839771.jpg" alt="Mercedes-Benz Clase C" class="img-fluid">
           <div class="car-info">
-            <h3>MERCEDES-BENZ</h3>
-            <p>CLASE C</p>
-            <p class="price">$1600.00/día</p>
-            <button class="btn btn-danger">Reservar Ahora</button>
+            <h3>BMW</h3>
+            <p class="card-text">
+              Año: 2021 <br>
+              Motor: 2.0L Turbo <br>
+              Transmisión: Automática <br>
+              Combustible: Gasolina <br>
+              Aire Acondicionado: Sí
+            </p>
+            <p class="price">$1500.00/día</p>
+            <button class="btn" (click)="reservarAhora({ id: 1, marca: 'BMW', modelo: 'Serie 3' })">Reservar Ahora</button>
           </div>
         </div>
       </div>
@@ -105,7 +117,13 @@
           <img src="https://images.prd.kavak.io/eyJidWNrZXQiOiJrYXZhay1pbWFnZXMiLCJrZXkiOiJpbWFnZXMvMzMzMDk5L0VYVEVSSU9SLWZyb250U2lkZVBpbG90TmVhci0xNzIzNDkxNzc0NjYwLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU0MCwiaGVpZ2h0IjozMTAsImJhY2tncm91bmQiOnsiciI6MjU1LCJnIjoyNTUsImIiOjI1NSwiYWxwaGEiOjB9fX19" alt="Audi A4" class="img-fluid">
           <div class="car-info">
             <h3>AUDI</h3>
-            <p>A4</p>
+            <p class="card-text">
+              Año: 2022 <br>
+              Motor: 2.0L Turbo <br>
+              Transmisión: Automática <br>
+              Combustible: Gasolina <br>
+              Aire Acondicionado: Sí
+            </p>
             <p class="price">$1550.00/día</p>
             <button class="btn btn-danger">Reservar Ahora</button>
           </div>
@@ -117,7 +135,13 @@
           <img src="https://images.prd.kavak.io/eyJidWNrZXQiOiJrYXZhay1pbWFnZXMiLCJrZXkiOiJpbWFnZXMvMzYzMjk5L0VYVEVSSU9SLWZyb250U2lkZVBpbG90TmVhci0xNzMyNDY4OTY1MTc5LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU0MCwiaGVpZ2h0IjozMTAsImJhY2tncm91bmQiOnsiciI6MjU1LCJnIjoyNTUsImIiOjI1NSwiYWxwaGEiOjB9fX19" alt="Tesla Model 3" class="img-fluid">
           <div class="car-info">
             <h3>TESLA</h3>
-            <p>MODEL 3</p>
+            <p class="card-text">
+              Año: 2021 <br>
+              Motor: 5.0L V8 <br>
+              Transmisión: Manual <br>
+              Combustible: Gasolina <br>
+              Aire Acondicionado: Sí
+            </p>
             <p class="price">$1800.00/día</p>
             <button class="btn btn-danger">Reservar Ahora</button>
           </div>
@@ -147,3 +171,5 @@
   </div>
 </section>
 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

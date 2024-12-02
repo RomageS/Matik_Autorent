@@ -35,7 +35,7 @@
                 type="text"
                 id="vehiculo"
                 class="form-control"
-                [value]="vehiculoSeleccionado?.modelo || 'Seleccione un vehículo'"
+                [value]="vehiculoSeleccionado ? vehiculoSeleccionado.brand + ' ' + vehiculoSeleccionado.model + ' ' + vehiculoSeleccionado.year : 'Seleccione un vehículo'"
                 disabled
               />
             </div>
@@ -52,9 +52,9 @@
             <div class="card">
               <img [src]="vehiculo.image" class="card-img-top" alt="{{ vehiculo.image }}" />
               <div class="card-body text-center">
-                <h6 class="card-title text-truncate">{{ vehiculo.modelo }}</h6>
+                <h6 class="card-title text-truncate">{{ vehiculo.model }}</h6>
                 <p class="card-text small">
-                  <strong>Marca:</strong> {{ vehiculo.marca }}
+                  <strong>Marca:</strong> {{ vehiculo.brand }}
                 </p>
                 <button
                   class="btn btn-primary btn-sm w-100"
