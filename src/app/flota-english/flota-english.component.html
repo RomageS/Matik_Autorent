@@ -1,0 +1,22 @@
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let car of cars">
+        <div class="card shadow-sm">
+          <img [src]="car.image" class="img-thumbnail" alt="{{ car.image }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ car.model }}</h5>
+            <p class="card-text text-muted">{{ car.category }}</p>
+            <ul class="list-unstyled mb-3">
+              <li><strong>Make:</strong> {{ car.brand }}</li>
+              <li><strong>Passsengers:</strong> {{ car.color }}</li>
+              <li><strong>luggage:</strong> {{ car.luggage }}</li>
+              <li><strong>Transmition:</strong> {{ car.transmission }}</li>
+              <li><strong>Doors:</strong> {{ car.doors }}</li>
+              <li><strong>Air conditioning:</strong> {{ car.ac ? 'Sí' : 'No' }}</li>
+            </ul>
+            <button class="btn btn-danger w-100 mb-2" routerLink="/reservas-english">Rent</button>
+            <button class="btn btn-outline-secondary w-100">+ vehicle details</button>
+          </div>
+        </div>
+      </div>
+    </div>

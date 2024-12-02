@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 
 
 @Component({
-  selector: 'app-sesion',
-  templateUrl: './sesion.component.html',
-  styleUrl: './sesion.component.css'
+  selector: 'app-sesion-english',
+  templateUrl: './sesion-english.component.html',
+  styleUrl: './sesion-english.component.css'
 })
-export class SesionComponent {
+export class SesionEnglishComponent {
   email: string = '';
   password: string = '';
   router: any;
