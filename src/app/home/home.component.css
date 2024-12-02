@@ -308,7 +308,7 @@ object-fit: fill;
 
 /* Sección destacada mejorada */
 .highlighted-section {
-  background: linear-gradient(135deg, #dadada, #0072BB);
+  background: linear-gradient(135deg, #f2f2f2, #0072BB);
   color: #000000;
   padding: 50px 20px;
   border-radius: 10px;
