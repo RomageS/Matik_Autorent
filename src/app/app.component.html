@@ -1,11 +1,37 @@
-<header>
-<app-header></app-header>
-</header>
 
+  <header>
+    <nav>
+      <button (click)="changeLanguage('spanish')">Español</button>
+      <button (click)="changeLanguage('english')">English</button>
+    </nav>
+  </header>
+  
+  <main>
+    <ng-container *ngIf="currentLanguage === 'spanish'">
+      <app-header></app-header>
+      <app-ayuda></app-ayuda>
+      <app-dashboard></app-dashboard>
+      <app-flota></app-flota>
+      <app-h-reservas></app-h-reservas>
+      <app-header></app-header>
+      <app-perfil></app-perfil>
+      <app-privacidad></app-privacidad>
+      <app-registro></app-registro>
+      <app-reservas></app-reservas>
+      <app-sesion></app-sesion>
+      <app-terminos></app-terminos>
+      <app-ubicacion></app-ubicacion>
+      <app-usuario></app-usuario>
+      <app-vehiculo></app-vehiculo>
+      <app-dashboard></app-dashboard>
+      <app-dashboard></app-dashboard>
 
-<router-outlet></router-outlet>
-
-
-<footer>
-  <app-footer></app-footer>
-</footer>
+      <app-footer></app-footer>
+    </ng-container>
+  
+    <ng-container *ngIf="currentLanguage === 'english'">
+      <app-header-english></app-header-english>
+      <app-footer-english></app-footer-english>
+    </ng-container>
+  </main>
+  

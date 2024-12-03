@@ -1,0 +1,29 @@
+<div class="hReserva-container">
+    <h1 class="titulo">schedule rents</h1>
+    <table class="tabla">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Client</th>
+          <th>Vehícle</th>
+          <th>Date</th>
+          <th>Estatement</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let reserva of reservas">
+          <td>{{ reserva.id }}</td>
+          <td>{{ reserva.cliente }}</td>
+          <td>{{ reserva.vehiculo }}</td>
+          <td>{{ reserva.fecha }}</td>
+          <td>{{ reserva.estado }}</td>
+          <td>
+            <button class="btn-editar" (click)="editarReserva(reserva)">Edit</button>
+            <button class="btn-eliminar" (click)="eliminarReserva(reserva.id)">Cancel</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

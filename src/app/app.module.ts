@@ -43,25 +43,29 @@ import { VehiculoComponent } from './vehiculo/vehiculo.component';
 import { HReservasComponent } from './h-reservas/h-reservas.component';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HReservasEnglishComponent } from './h-reservas-english/h-reservas-english.component';
+import { PerfilEnglishComponent } from './perfil-english/perfil-english.component';
+import { FooterEnglishComponent } from './footer-english/footer-english.component';
+import { UsuarioEnglishComponent } from './usuario-english/usuario-english.component';
+import { VehiculoEnglishComponent } from './vehiculo-english/vehiculo-english.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
     HomeComponent,
     FlotaComponent,
     ReservasComponent,
     AyudaComponent,
     UbicacionComponent,
     SesionComponent,
-    HeaderComponent,
     RegistroComponent,
     TerminosComponent,
 
     DashboardEnglishComponent,
     FlotaEnglishComponent,
-    HomeEnglishComponent,
     PrivacidadEnglishComponent,
     RegistroEnglishComponent,
     ReservarEnglishComponent,
@@ -77,7 +81,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     FooterComponent,
     VehiculoComponent,
     HReservasComponent,
-    DashboardComponent
+    DashboardComponent,
+    HReservasEnglishComponent,
+    PerfilEnglishComponent,
+    FooterEnglishComponent,
+    UsuarioEnglishComponent,
+    VehiculoEnglishComponent
   ],
   
   imports: [

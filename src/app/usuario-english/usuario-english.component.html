@@ -1,0 +1,32 @@
+<div class="usuarios-container">
+    <h1 class="titulo">registered users</h1>
+    <table class="tabla">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone number</th>
+          <th>Actiond</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let usuario of usuarios">
+          <td>{{ usuario.id }}</td>
+          <td>{{ usuario.name }}</td>
+          <td>{{ usuario.email }}</td>
+          <td>{{ usuario.telefono }}</td>
+          <td>
+            <button class="btn-editar" (click)="editarUsuario(usuario)">Editar</button>
+            <button class="btn-eliminar" (click)="eliminarUsuario(usuario.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Formulario para agregar/editar usuarios -->
+    <form (ngSubmit)="guardarUsuario()">
+      <button type="submit">{{ usuarioSeleccionado.id ? 'Actualizar' : 'Agregar' }}</button>
+    </form>
+  </div>
+  
